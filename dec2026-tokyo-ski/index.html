@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1c2c">
+<title>日本滑雪行程簡報 · 2026年12月14–18日 · Billy + 同伴</title>
+<style>
+  :root {
+    --bg: #0b1c2c;
+    --bg2: #12263a;
+    --card: #163049;
+    --card-border: rgba(186, 214, 240, 0.14);
+    --text: #e8f1f8;
+    --muted: #9bb0c4;
+    --accent: #7eb8e8;
+    --accent2: #c9e4f7;
+    --snow: #f4f8fb;
+    --good: #6bcf8e;
+    --warn: #e8b86d;
+    --bad: #e07a7a;
+    --chip: #1e3d58;
+    --radius: 14px;
+    --shadow: 0 8px 28px rgba(0,0,0,.28);
+    --font: "Segoe UI", "PingFang HK", "Noto Sans TC", "Hiragino Sans", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #1a3a55 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #243f5a 0%, transparent 50%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a { color: var(--accent2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #fff; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 3.5rem; }
+  header.hero {
+    padding: 1.75rem 1.25rem 1.5rem;
+    border-radius: calc(var(--radius) + 4px);
+    background:
+      linear-gradient(145deg, rgba(126,184,232,.18), transparent 45%),
+      linear-gradient(180deg, #1a3550, #102536);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: .55rem;
+  }
+  h1 {
+    font-size: clamp(1.55rem, 4.5vw, 2rem);
+    line-height: 1.25;
+    margin: 0 0 .6rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+  }
+  .sub { color: var(--muted); margin: 0 0 1rem; font-size: .95rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chip {
+    background: var(--chip);
+    border: 1px solid var(--card-border);
+    color: var(--snow);
+    padding: .28rem .65rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+  }
+  nav.toc {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+    margin: 1rem 0 1.5rem;
+    position: sticky; top: 0; z-index: 5;
+    padding: .55rem 0;
+    background: linear-gradient(180deg, rgba(11,28,44,.96), rgba(11,28,44,.88));
+    backdrop-filter: blur(8px);
+  }
+  nav.toc a {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    color: var(--accent2);
+    text-decoration: none;
+    padding: .4rem .7rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+  nav.toc a:hover { background: #1d4563; color: #fff; }
+  section { margin-bottom: 1.75rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin: 0 0 .85rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--card-border);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 1.1rem 0 .55rem;
+    color: var(--accent2);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.05rem;
+    margin-bottom: .75rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  }
+  .day-head {
+    display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap;
+    margin-bottom: .35rem;
+  }
+  .day-num {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: .85rem;
+    letter-spacing: .04em;
+  }
+  .day-title { font-weight: 700; font-size: 1.05rem; margin: 0; }
+  .muted { color: var(--muted); }
+  .small { font-size: .88rem; }
+  ul.clean { margin: .4rem 0 0; padding-left: 1.15rem; }
+  ul.clean li { margin: .25rem 0; }
+  .rest {
+    background: var(--bg2);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: .95rem 1rem;
+    margin-bottom: .7rem;
+  }
+  .rest-top {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: .75rem;
+  }
+  .rest-name { font-weight: 700; font-size: 1.02rem; margin: 0 0 .15rem; }
+  .rest-jp { color: var(--muted); font-size: .86rem; margin: 0 0 .35rem; }
+  .score {
+    flex-shrink: 0;
+    background: #0e2436;
+    border: 1px solid rgba(126,184,232,.35);
+    color: var(--accent2);
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: .35rem .55rem;
+    border-radius: 10px;
+    min-width: 3.1rem;
+    text-align: center;
+  }
+  .score span { display: block; font-size: .62rem; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
+  .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin: .4rem 0 .5rem; }
+  .tag {
+    font-size: .72rem; font-weight: 650;
+    background: var(--chip); color: var(--snow);
+    padding: .18rem .45rem; border-radius: 6px;
+  }
+  .tag.warn { background: rgba(232,184,109,.18); color: var(--warn); }
+  .tag.good { background: rgba(107,207,142,.15); color: var(--good); }
+  .tag.bad { background: rgba(224,122,122,.15); color: var(--bad); }
+  .why { font-size: .88rem; color: var(--muted); margin: .45rem 0 0; }
+  .tips li { margin-bottom: .45rem; }
+  footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    color: var(--muted);
+    font-size: .8rem;
+  }
+  .callout {
+    border-left: 3px solid var(--warn);
+    background: rgba(232,184,109,.08);
+    padding: .7rem .9rem;
+    border-radius: 0 10px 10px 0;
+    font-size: .9rem;
+    margin: .75rem 0;
+  }
+  .callout.bad { border-left-color: var(--bad); background: rgba(224,122,122,.08); }
+  .callout.good { border-left-color: var(--good); background: rgba(107,207,142,.08); }
+
+  .checklist { list-style: none; margin: .35rem 0 0; padding: 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: .65rem;
+    margin: 0; padding: .65rem 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist input[type="checkbox"] {
+    margin-top: .2rem; width: 1.1rem; height: 1.1rem; flex-shrink: 0;
+    accent-color: var(--good);
+  }
+  .checklist label { flex: 1; cursor: pointer; line-height: 1.45; }
+  .checklist label .when {
+    display: block; font-size: .78rem; color: var(--muted); margin-top: .2rem;
+  }
+  .checklist li.done label { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .checklist li.done label .when { text-decoration: none; color: var(--muted); opacity: .85; }
+  .check-meta { font-size: .82rem; color: var(--muted); margin: 0 0 .5rem; }
+  .check-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+  .check-actions button {
+    font: inherit; font-size: .82rem; font-weight: 650;
+    padding: .35rem .7rem; border-radius: 8px; cursor: pointer;
+    border: 1px solid var(--card-border); background: var(--bg2); color: var(--snow);
+  }
+  .check-actions button:hover { border-color: var(--accent); }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+  .photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: .65rem 0 .35rem;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    background: #0e2436;
+  }
+  .photo.tall { aspect-ratio: 4 / 3; }
+  .photo-cap {
+    font-size: .75rem;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+    line-height: 1.4;
+  }
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .55rem;
+    margin: .6rem 0 .8rem;
+  }
+  @media (min-width: 560px) {
+    .photo-grid.two { grid-template-columns: 1fr 1fr; }
+  }
+  .photo-card {
+    background: var(--bg2);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0;
+    margin: 0;
+  }
+  .photo-card .cap {
+    padding: .45rem .65rem .55rem;
+    font-size: .75rem;
+    color: var(--muted);
+  }
+
+  .map-card {
+    background: var(--bg2);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: .75rem 0 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  }
+  .map-card .map-title {
+    padding: .65rem .85rem .25rem;
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--accent2);
+  }
+  .map-card .map-walk {
+    padding: 0 .85rem .55rem;
+    font-size: .88rem;
+    color: var(--text);
+    margin: 0;
+  }
+  .map-card iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 0;
+    background: #0e2436;
+  }
+  @media (min-width: 560px) {
+    .map-card iframe { height: 340px; }
+  }
+  .map-card .map-cap {
+    padding: .45rem .85rem .65rem;
+    font-size: .75rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.45;
+  }
+  .map-card .map-cap a { font-weight: 600; }
+  .leg-list { margin: .35rem 0 0; padding-left: 1.15rem; }
+  .leg-list li { margin: .4rem 0; }
+  .leg-list .tix { color: var(--muted); font-size: .86rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">行程簡報 · Plan C</div>
+  <h1>志賀高原滑雪 · 長野 → 東京</h1>
+  <p class="sub">2026年12月14–18日 · 鐵路／巴士 · <strong>2</strong> 人（Billy + 同伴，約 38 歲）。偏重實在當地菜、居酒屋、蕎麥／拉麵 —— 不是約會高級餐廳。</p>
+  <div class="meta">
+    <span class="chip">HX604／HX611</span>
+    <span class="chip">一 NRT → 長野</span>
+    <span class="chip">二–四 志賀／發哺</span>
+    <span class="chip">四–五 上野 → NRT</span>
+    <span class="chip">一晚長野：二選一（試算表）</span>
+    <span class="chip">Hotel Higashidate</span>
+    <span class="chip">&amp; Here Tokyo Ueno</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#overview">總覽</a>
+  <a href="#flights">航班</a>
+  <a href="#days">行程</a>
+  <a href="#transport">交通＋地圖</a>
+  <a href="#eat">食</a>
+  <a href="#bars">酒吧</a>
+  <a href="#checklist">訂位清單</a>
+  <a href="#tips">實用</a>
+  <a href="#sources">來源</a>
+</nav>
+
+<section id="overview">
+  <h2>總覽</h2>
+  <div class="card">
+    <div class="photo-grid two">
+      <figure class="photo-card">
+        <img class="photo" src="images/shiga-kogen-ski.jpg" alt="志賀高原滑雪場雪景與纜車" loading="lazy" width="1280" height="853">
+        <figcaption class="cap">志賀高原滑雪場（西館山／發哺方向）· Wikimedia CC BY-SA 4.0</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img class="photo" src="images/shiga-hoppo-bunadaira.jpg" alt="發哺ブナ平滑雪道與纜車" loading="lazy" width="1280" height="853">
+        <figcaption class="cap">發哺ブナ平（Hotel Higashidate 所在區）· Wikimedia CC BY-SA 4.0</figcaption>
+      </figure>
+    </div>
+    <p style="margin-top:.4rem"><strong>重點：</strong>以 Hotel Higashidate（發哺溫泉）為基地滑志賀高原，前後各一晚長野與上野。全程鐵路／巴士 —— 不租車。</p>
+    <ul class="clean small">
+      <li><strong>一 14：</strong><strong>HX604</strong> 香港 T2 <strong>08:10</strong> → 成田 T1 <strong>13:20</strong> → Skyliner → 上野 → 北陸新幹線 → 長野；一晚長野：二選一（試算表），入住 <strong>Hotel Livemax Premium Nagano Ekimae</strong> 或 <strong>Dormy Inn Nagano Zenkounoyu</strong>，尚未選定單一酒店。</li>
+      <li><strong>二 15：</strong>長電冬季特急（東口 #23）→ 發哺溫泉 S21 → Higashidate。<strong>已定早班</strong>（約 <strong>10:40</strong>；以 11 月公布時刻為準）——朋友想早上山、下午可滑；唔搭 14:30。最遲入住約 17:00。</li>
+      <li><strong>三 16：</strong>全日滑雪 · 續住 Higashidate。午餐推 <strong>山ノ内大勝軒</strong>（一ノ瀬）；晚餐酒店會席。</li>
+      <li><strong>四 17：</strong>Higashidate 退房 → <strong>YUDANAKA BREWERY COMPLEX U</strong> brunch／午餐 → 長電湯田中 → 長野 → 新幹線 → <a href="https://andherehotels.jp/tokyoueno/" target="_blank" rel="noopener">&amp; Here Tokyo Ueno</a> → 晚餐 <strong>ちんや</strong>（淺草壽喜燒）→ 晚間酒吧 <strong>二揀一</strong>（問朋友）：<strong>COCKTAIL WORKS</strong> 或 <strong>The TRAD</strong>（雪茄）。不走戶隱（太遠）。</li>
+      <li><strong>五 18：</strong>午餐選項（Matsui 或上野／淺草）→ Skyliner → 成田 T1；<strong>HX611</strong> <strong>20:25</strong> → 香港 T1 <strong>00:50+1</strong>（建議約 <strong>18:25</strong> 前到機場）。</li>
+    </ul>
+    <div class="callout good">
+      <strong>兩人飲食偏好：</strong>味噌拉麵、站食蕎麥、信州居酒屋（馬刺／おやき／當地清酒）、若繞道湯田中可喝手工啤酒，以及上野／淺草拉麵或站壽司；周四晚壽喜燒 <strong>ちんや</strong>。發哺滑雪夜誠實方案＝酒店晚餐。
+    </div>
+  </div>
+
+  <div class="card small">
+    <h3 style="margin-top:0">已定酒店</h3>
+    <ul class="clean">
+      <li><strong>一 12月14日｜一晚長野：二選一（試算表）</strong><br>
+        <a href="https://www.hotel-livemax.com/nagano/naganost/" target="_blank" rel="noopener">Hotel Livemax Premium Nagano Ekimae</a> · <span class="mono">https://www.hotel-livemax.com/nagano/naganost/</span><br>
+        <a href="https://dormy-hotels.com/dormyinn/hotels/nagano/" target="_blank" rel="noopener">Dormy Inn Nagano Zenkounoyu</a> · <span class="mono">https://dormy-hotels.com/dormyinn/hotels/nagano/</span><br>
+        <span class="muted">兩者為 shortlist，未選定單一酒店；不代表兩間均已預訂。</span>
+      </li>
+      <li><strong>二 12月15日｜Hotel Higashidate</strong> · <a href="https://higashidate.com/" target="_blank" rel="noopener">https://higashidate.com/</a></li>
+      <li><strong>三 12月16日｜Hotel Higashidate</strong> · <a href="https://higashidate.com/" target="_blank" rel="noopener">https://higashidate.com/</a></li>
+      <li><strong>四 12月17日｜&amp; Here Tokyo Ueno</strong> · <a href="https://andherehotels.jp/tokyoueno/" target="_blank" rel="noopener">https://andherehotels.jp/tokyoueno/</a></li>
+      <li><strong>五 12月18日｜無酒店（航班）</strong></li>
+    </ul>
+  </div>
+
+  <h3>交通（速查數字）</h3>
+  <div class="card small">
+    <ul class="clean">
+      <li><strong>京成 Skyliner</strong> 成田 ↔ 京成上野 約 41 分 · 約 ¥2,310–2,580 · 再轉 JR 上野新幹線約 5–10 分（行李多預留 15–20 分）</li>
+      <li><strong>北陸新幹線</strong> 上野–長野 約 1h15–1h40 · 約 ¥7,700–8,500 · 長野新幹線口→東口巴士約 5 分</li>
+      <li><strong>長野酒店步行：</strong>Livemax（東口側）約 2–3 分 · Dormy Inn（善光寺口側）約 1–3 分；翌日去東口 #23：Livemax 約 2–4 分、Dormy 經構內自由通路約 8–12 分</li>
+      <li><strong>長電冬季特急</strong> 長野東口 #23 → 發哺溫泉 S21 約 70–80 分 · 約 ¥3,000 · 下車→Higashidate 徒歩約 2 分（冬期請於巴士站致電酒店搬行李）· <a href="https://www.nagadenbus.co.jp/express/winter/shigakogen/" target="_blank" rel="noopener">時刻表</a>（<strong>2026–27 約 2026 年 11 月再確認</strong>）</li>
+      <li><strong>&amp; Here Ueno：</strong>JR 上野不忍口徒歩約 7–8 分（約 550–650m）· 京成上野徒歩約 3–5 分</li>
+      <li><strong>JR Pass：</strong>這條路線不划算</li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="flights">
+  <h2>航班 · 香港航空</h2>
+  <p class="muted small" style="margin-top:-.3rem">來自 2026-08-31 香港航空電子行程確認信（訂單 <span class="mono">NE2608312240145458</span>）。本確認為 <strong>MR CHEUNG CHIHEI</strong> 一人；同伴若另票請自行核對時間是否相同。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">去程 · 一 12月14日（一）</h3>
+    <ul class="clean small">
+      <li><strong>HX604</strong> · 經濟艙（V）超值飛 · 直飛 · 約 4h10m · 機型 32G</li>
+      <li><strong>08:10</strong> 香港國際機場 <strong>T2</strong> → <strong>13:20</strong> 東京成田國際機場 <strong>T1</strong></li>
+      <li>寄艙行李：<strong>1PC／23kg</strong>（確認信）· 標準座位</li>
+      <li><strong>香港出發建議：</strong>港航建議起飛前約 <strong>2 小時</strong>到機場；閘口起飛前約 20 分關閉。HX 現於 <strong>HKG T2</strong> 營運——跟航廈標示，勿走錯 T1。</li>
+      <li><strong>抵成田後→長野（粗估）：</strong>入境＋取行李約 <strong>45–90 分</strong> → 京成 Skyliner 約 <strong>41 分</strong>到京成上野 → 轉 JR 上野新幹線改札約 <strong>5–20 分</strong>（行李多取上）→ 北陸新幹線約 <strong>1h15–1h40</strong> → 長野。目標：約 <strong>16:30–18:00</strong> 到長野站（視入境快慢）；傍晚前入住 shortlist 酒店。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">回程 · 五 12月18日（五）</h3>
+    <ul class="clean small">
+      <li><strong>HX611</strong> · 經濟艙（V）超值飛 · 直飛 · 約 5h25m · 機型 32G</li>
+      <li><strong>20:25</strong> 東京成田國際機場 <strong>T1</strong> → <strong>00:50+1</strong> 香港國際機場 <strong>T1</strong>（翌日凌晨）</li>
+      <li>寄艙行李：<strong>1PC／23kg</strong> · 標準座位</li>
+      <li><strong>港航建議：</strong>起飛前約 <strong>2 小時</strong>抵達機場 → 目標約 <strong>18:25</strong> 前到 NRT T1 值機／托運。</li>
+    </ul>
+    <h3>去機場時間（上野／東京 → NRT T1）</h3>
+    <ul class="clean small">
+      <li><strong>核心路段：</strong>&amp; Here → 京成上野徒歩 <strong>3–5 分</strong> → <strong>Skyliner</strong> 約 <strong>41–45 分</strong> → 成田機場（跟 T1 標示）→ 步行至值機約 <strong>10–15 分</strong>。</li>
+      <li><strong>門到門粗估（&amp; Here → 值機）：</strong>約 <strong>70–90 分</strong>（含等車／步行；繁忙時再加 15 分）。</li>
+      <li><strong>建議離酒店時間：</strong>約 <strong>16:30–17:00</strong>（寬鬆）；最遲約 <strong>17:00–17:15</strong> 出門仍合理（要準時趕上 Skyliner）。目標約 <strong>17:15–17:30</strong> 班車上車 → 約 <strong>18:00–18:20</strong> 到機場。</li>
+      <li><strong>選項 A（Matsui 四谷）後：</strong>午餐約 12:00–13:30 後回上野／日暮里約 <strong>25–40 分</strong>，仍遠早於上列離開時間——起飛緩衝夠。</li>
+      <li><strong>選項 B（上野／淺草）：</strong>食完直接返酒店取行李 → 京成上野，動線最短。</li>
+      <li>備選：日暮里上 Skyliner（同線、轉乘有時更順）。Limousine bus 新宿↔成田約 80–100 分＋塞車風險，今次優先 Skyliner。</li>
+    </ul>
+    <div class="callout good" style="margin-bottom:0">
+      <strong>周五時間軸（建議）：</strong>午餐（至約 14:00）→ 收拾／寄物 → <strong>16:30–17:00</strong> 離上野 → Skyliner → <strong>~18:15</strong> 到 NRT T1 → 值機／安檢 → <strong>20:25</strong> HX611。
+    </div>
+  </div>
+</section>
+
+<section id="days">
+  <h2>逐日行程</h2>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">一 12月14日</span><h3 class="day-title" style="margin:0">抵達 · 長野夜</h3></div>
+    <img class="photo" src="images/nagano-station-east.jpg" alt="長野站東口外觀" loading="lazy" width="1280" height="853">
+    <p class="photo-cap">長野站東口（翌日長電巴士出發處）· Wikimedia</p>
+    <ul class="clean small">
+      <li><strong>HX604</strong> 香港 T2 <strong>08:10</strong> → 成田 T1 <strong>13:20</strong> → Skyliner → 上野 → 新幹線 → 長野（目標約 16:30–18:00 到站；視入境）。</li>
+      <li>酒店：<strong>一晚長野：二選一（試算表）</strong>——<a href="https://www.hotel-livemax.com/nagano/naganost/" target="_blank" rel="noopener">Hotel Livemax Premium Nagano Ekimae</a> 或 <a href="https://dormy-hotels.com/dormyinn/hotels/nagano/" target="_blank" rel="noopener">Dormy Inn Nagano Zenkounoyu</a>（車站區／溫泉浴）。兩者仍是 shortlist，未選定單一酒店，非兩間均已預訂。</li>
+      <li><strong>步行：</strong>新幹線出站 → Livemax 出<strong>東口</strong>約 2–3 分；Dormy 出<strong>善光寺口</strong>約 1–3 分。詳見 <a href="#transport">交通＋地圖</a>。</li>
+      <li><strong>食：</strong>みそ家拉麵（營業至深夜）或 信州長屋酒場 —— 見「食」。</li>
+      <li><strong>喝：</strong>車站附近 cocktail bar（MOSCO／エランドール）—— 見「酒吧」。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">二 12月15日</span><h3 class="day-title" style="margin:0">長野 → 發哺 · Hotel Higashidate</h3></div>
+    <div class="photo-grid two">
+      <figure class="photo-card">
+        <img src="images/hotel-higashidate-hero.jpg" alt="Hotel Higashidate 官方宣傳圖" loading="lazy" width="1200" height="630">
+        <figcaption class="cap">Hotel Higashidate · 官網圖</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="images/nishidate-higashidate-peaks.jpg" alt="西館山與東館山山峰" loading="lazy" width="1280" height="853">
+        <figcaption class="cap">西館山・東館山（發哺一帶）· Wikimedia</figcaption>
+      </figure>
+    </div>
+    <ul class="clean small">
+      <li><strong>計劃（已定）：</strong>簡速早餐後搭約 <strong>10:40</strong> 長電冬季特急上山（朋友想早到 resort、下午可滑）。<strong>唔</strong>留長野食百名店午餐（こすげ／すき亭午市唔夾早班）。</li>
+      <li>長電巴士自<strong>長野東口 #23</strong> → <strong>發哺溫泉（S21）</strong>（約 70–80 分）。</li>
+      <li><strong>步行去 #23：</strong>Livemax（東口側）約 2–4 分；Dormy（善光寺口）經自由通路約 8–12 分。建議約 <strong>10:15 前</strong>到 #23。S21 下車後徒歩約 2 分，冬期致電酒店搬行李（<span class="mono">0269-34-2534</span>）。地圖見 <a href="#transport">交通＋地圖</a>。</li>
+      <li>酒店：<a href="https://higashidate.com/" target="_blank" rel="noopener">Hotel Higashidate</a> —— 早到可下午滑；最遲入住約 17:00。</li>
+      <li><strong>食：</strong>山上午餐（雪場／發哺食堂）· 晚餐酒店會席。發哺附近冬季獨立餐廳很少。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">三 12月16日</span><h3 class="day-title" style="margin:0">全日滑雪 · 志賀高原</h3></div>
+    <img class="photo" src="images/shiga-yamanoeki.jpg" alt="志賀高原山之驛外觀" loading="lazy" width="1280" height="853">
+    <p class="photo-cap">山之驛（志賀中央區；周四下山巴士可能經此）· Wikimedia CC BY-SA 4.0</p>
+    <ul class="clean small">
+      <li>以發哺為基地滑志賀連貫雪場。</li>
+      <li><strong>午餐（推介）：</strong>滑往<strong>一ノ瀬ファミリー</strong>免費休息所內 <strong>山ノ内大勝軒</strong>（元祖つけ麺／中華そば；約 11:00–15:00）。周三最適；周二多半只賣咖喱。發哺／東館連走可達。</li>
+      <li><strong>午餐（備選）：</strong>若留在發哺／中央區，用雪場食堂／一ノ瀬ダイヤモンド <strong>Hi HAPPY</strong>（約 9:30–16:30，季節營運）—— 實用、唔使為食繞遠。</li>
+      <li><strong>晚餐（推介）：</strong><strong>Hotel Higashidate</strong> 創作會席（信州牛等）＋温泉。發哺幾乎無獨立晚餐店。COMPLEX U 留<strong>周四 17</strong>，呢晚唔使落湯田中。</li>
+      <li><strong>滑雪區 cocktail bar：</strong>未找到可信店 —— 以酒店為主。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">四 12月17日</span><h3 class="day-title" style="margin:0">COMPLEX U brunch · 下山到上野</h3></div>
+    <div class="photo-grid two">
+      <figure class="photo-card">
+        <img src="images/ueno-station.jpg" alt="上野站本館外觀" loading="lazy" width="1280" height="853">
+        <figcaption class="cap">上野站 · Wikimedia</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="images/asakusa-kaminarimon.jpg" alt="淺草雷門" loading="lazy" width="1280" height="853">
+        <figcaption class="cap">淺草・雷門 · Wikimedia</figcaption>
+      </figure>
+    </div>
+    <ul class="clean small">
+      <li><strong>計劃：</strong>Higashidate 退房（朝早可短滑亦可直接下山）→ 長電／巴士往<strong>湯田中</strong> → <strong>YUDANAKA BREWERY COMPLEX U</strong> brunch／午餐（手工啤＋信州小食；可選 2 樓日歸溫泉／桑拿）。湯田中站徒歩約 10 分。</li>
+      <li><strong>為何這天：</strong>落山順路，比戶隱近很多。官網約 <strong>10:00–18:00</strong>（飲食 L.O. 約 17:00；冬季時刻以日曆為準）。私人湯房若想要，需提前網上預約。</li>
+      <li><strong>之後：</strong>長電湯田中 → 長野 → 北陸新幹線 → 上野。目標傍晚前到酒店寄行李，再出門食晚餐。</li>
+      <li><strong>步行入住：</strong>上野新幹線到達 → <strong>不忍口</strong> → &amp; Here 約 7–8 分。地圖見 <a href="#transport">交通＋地圖</a>。</li>
+      <li>酒店：<strong>&amp; Here Tokyo Ueno</strong>。</li>
+      <li><strong>晚餐（計劃）：</strong><strong>すき焼き ちんや 浅草本店</strong>（台東区花川戸 2-16-1；東武／地鐵淺草駅徒歩約 6 分）。明治創業淺草壽喜燒老字號（百名店級）。平日晚餐約 <strong>16:30–21:30</strong>（料理 L.O. 約 20:00）。兩人晚市約 <strong>¥10,000–15,000／人</strong> 級。上野 → 淺草約 10–15 分。<strong>等朋友確認後再預約</strong>（見 <a href="#checklist">訂位清單</a>）。</li>
+      <li><strong>之後 · 晚間酒吧二揀一（問朋友）：</strong><br>        <strong>A · BAR COCKTAIL WORKS 上野</strong> —— 創作 cocktail＋輕食；全席禁煙；約 17:30–02:30；charge 約 ¥660／人；酒店徒歩約 3–8 分。<br>        <strong>B · The TRAD 湯島</strong> —— whisky＋雪茄 bar（可坐低抽）；約 18:00–23:30；席料約 ¥1,200／人；上野／御徒町徒歩數分；旅客評價較穩（Google 約 4.5）。雪茄可能現金。<br>        詳見 <a href="#checklist">訂位清單</a> · 餐廳卡。</li>
+      <li><strong>不選：</strong>戶隱神社全日繞路（太遠）。周五 18 起飛約 20:25 —— cocktail bar 唔適合當日晚（開 17:30 會食空港緩衝）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">五 12月18日</span><h3 class="day-title" style="margin:0">午餐選項 · Skyliner · 起飛</h3></div>
+    <img class="photo" src="images/ameyoko.jpg" alt="阿美橫丁商店街氣氛" loading="lazy" width="1280" height="853">
+    <p class="photo-cap">上野／阿美橫丁氣氛 · Wikimedia —— 近酒店選項；Matsui 在四谷</p>
+    <ul class="clean small">
+      <li><strong>午餐（未定 · 兩人商量）：</strong><strong>HX611</strong> 成田 T1 <strong>20:25</strong> → 香港 T1 <strong>00:50+1</strong>。港航建議約 <strong>18:25</strong> 前到機場 → 建議約 <strong>16:30–17:00</strong> 離上野（詳見 <a href="#flights">航班</a>）。</li>
+      <li><strong>選項 A · RAMEN MATSUI（四谷）：</strong>新宿区四谷 4-25-10 ダイアパレス御苑前 B-2；丸ノ内線 <strong>新宿御苑前</strong>徒歩約 6 分。周五有開；只做午餐約 <strong>11:00–15:30</strong>（水・木定休；不定休對 IG）。完全預約制 · <a href="https://www.tablecheck.com/en/shops/ramen-matsui/reserve" target="_blank" rel="noopener">TableCheck</a> · <strong>12/15 12:00</strong> 開搶 · 預訂費 ¥500／人（不退）· 現金 only · 遲到＝取消＋¥2,000／人 · 座位約 30 分 · 提前 10 分到。大行李先 Instagram DM（@ramen_matsui）。動線：&amp; Here → 地鐵約 25–35 分 → Matsui → 回京成上野／日暮里 → Skyliner。</li>
+      <li><strong>選項 B · 留上野／淺草（近酒店、唔使訂）：</strong>例如 <strong>与ろゐ屋</strong>（淺草柚子醬油）、<strong>喜多方食堂</strong>（淺草）、阿美橫／站食壽司等 —— 詳見「食」卡。動線短：食完 → 京成上野（酒店徒歩 3–5 分）→ Skyliner。</li>
+      <li><strong>行李：</strong>退房後可先寄放 &amp; Here 再取，或上野／日暮里投幣櫃。</li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="transport">
+  <h2>交通＋地圖</h2>
+  <p class="muted small" style="margin-top:-.3rem">步行時間以酒店／車站官方或常見導覽為準（2026-09-26 核實）。地圖可離線打開連結；嵌入圖需網絡。長電 <strong>2026–27 冬季時刻約 2026 年 11 月</strong>公布 —— 出發前請再對 PDF。</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">逐日交通計劃（Plan C · 無車）</h3>
+    <ol class="leg-list small">
+      <li><strong>一 12/14 · HX604 → 長野</strong><br>
+        <strong>HX604</strong> 香港 T2 08:10 → 成田 T1 <strong>13:20</strong> → 入境取行李 → <strong>京成 Skyliner</strong> → 京成上野（約 41 分）→ 步行轉 <strong>JR 上野新幹線</strong>（5–10 分；行李多 15–20）→ 北陸新幹線 → 長野（約 1h15–1h40）→ shortlist 酒店（東口 Livemax 2–3 分／善光寺口 Dormy 1–3 分）。<br>
+        <span class="tix">票：Skyliner + 新幹線指定席（建議出發前買妥）。目標約 16:30–18:00 到長野。</span>
+      </li>
+      <li><strong>二 12/15 · 長野 → 發哺（早班）</strong><br>
+        酒店退房 → 長野<strong>東口 #23</strong>（Livemax 約 2–4 分；Dormy 約 8–12 分；建議 <strong>10:15 前</strong>到）→ 長電冬季特急約 <strong>10:40</strong>（以 11 月 PDF 為準）→ <strong>發哺溫泉 S21</strong>（約 70–80 分）→ 徒歩約 2 分／致電 Higashidate 搬行李 → 下午可滑。<br>
+        <span class="tix">票：長電巴士車內或售票處；一人約 ¥3,000（以官網為準）。</span>
+      </li>
+      <li><strong>三 12/16 · 全日滑雪</strong><br>
+        以 Higashidate／發哺為基地。無需長途交通。若去湯田中釀酒廠需另查巴士／taxi（非步行距離）。
+      </li>
+      <li><strong>四 12/17 · COMPLEX U brunch → 上野</strong><br>
+        退房後由發哺／山之驛落山往<strong>湯田中</strong>（巴士約 30–50 分，或以山之驛轉長電）→ 徒歩約 10 分至 <strong>YUDANAKA BREWERY COMPLEX U</strong>（brunch／午餐，約 11:00–14:00 一帶）→ 長電湯田中 → 長野 → 新幹線 → 上野 → 不忍口徒歩約 7–8 分至 <strong>&amp; Here Tokyo Ueno</strong>。<br>
+        <span class="tix">陷阱：COMPLEX U 不定休 —— 出發前對官網日曆；私人 SPA 要預先訂。晚餐 <strong>ちんや</strong>（淺草；預約）→ 之後酒吧 <strong>COCKTAIL WORKS 或 The TRAD</strong>（問朋友）。仍留新幹線緩衝。</span>
+      </li>
+      <li><strong>五 12/18 · 午餐選項 → HX611</strong><br>
+        <strong>A)</strong> Matsui（四谷）或 <strong>B)</strong> 上野／淺草午餐 → 京成上野／日暮里 → Skyliner（約 41–45 分）→ 成田 <strong>T1</strong> → <strong>HX611 20:25</strong> → 香港 T1 00:50+1。<br>
+        <span class="tix">時間：建議 <strong>16:30–17:00</strong> 離上野；約 <strong>18:25</strong> 前到機場（港航建議起飛前 2 小時）。門到門約 70–90 分。選 A 要 12/15 中午 TableCheck。<strong>不要</strong>同日志賀→成田。</span>
+      </li>
+    </ol>
+    <div class="callout" style="margin-bottom:0">
+      <strong>長野站出口速記：</strong>新幹線／多數特急相關動線靠近站體中央；<strong>東口</strong>＝長電 #23、Livemax；<strong>善光寺口</strong>＝Dormy、みそ家／居酒屋／酒吧區。兩口以構內自由通路相連（約 3–5 分）。
+    </div>
+  </div>
+
+  <h3>關鍵步行／轉乘地圖</h3>
+    <div class="map-card">
+      <div class="map-title">a）成田 → 京成上野（Skyliner）／轉 JR 上野</div>
+      <p class="map-walk">成田機場京成改札乘 <strong>Skyliner</strong> 約 41 分到<strong>京成上野</strong>。出站後跟「JR／新幹線」標示步行約 <strong>5–10 分</strong>到 JR 上野（行李多預留 <strong>15–20 分</strong>到新幹線月台）。京成上野與 JR 上野是相鄰但分開的車站。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85&hl=zh-TW&z=15&output=embed" title="a）成田 → 京成上野（Skyliner）／轉 JR 上野"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%20%E7%AC%AC2%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%20%E4%BA%AC%E6%88%90%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC&destination=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85&travelmode=transit" target="_blank" rel="noopener">在 Google 地圖開啟</a>（公共交通路線）<br>票：Skyliner 券（機場或線上）· 亦可現場買。</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">b）JR 上野 → 長野（北陸新幹線）</div>
+      <p class="map-walk">入 JR 上野<strong>中央改札</strong>後轉<strong>新幹線轉乘改札</strong>，下行至 B4F 新幹線月台（19–22 番線一帶）。往長野乘 <strong>あさま／はくたか</strong> 等北陸新幹線，約 <strong>1h15–1h40</strong>。長野到站後出新幹線口，跟標示去<strong>東口</strong>（巴士）或<strong>善光寺口</strong>（Dormy／多數餐廳）。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E4%B8%8A%E9%87%8E%E9%A7%85%20%E6%96%B0%E5%B9%B9%E7%B7%9A%E6%94%B9%E6%9C%AD&hl=zh-TW&z=15&output=embed" title="b）JR 上野 → 長野（北陸新幹線）"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=JR%E4%B8%8A%E9%87%8E%E9%A7%85&destination=%E9%95%B7%E9%87%8E%E9%A7%85&travelmode=transit" target="_blank" rel="noopener">在 Google 地圖開啟</a>（公共交通路線）<br>票：指定席可線上（えきねっと）或綠窗口／自動售票機。</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">c）長野站 → Hotel Livemax Premium Nagano Ekimae</div>
+      <p class="map-walk">出<strong>東口（東口）</strong>，酒店在東口站前側，官網／じゃらん：徒歩約 <strong>2–3 分</strong>（約 150–200m）。地址：長野市大字栗田 2145。新幹線抵達後跟「東口」標示最直接。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%AA%E3%83%96%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9PREMIUM%E9%95%B7%E9%87%8E%E9%A7%85%E5%89%8D&hl=zh-TW&z=17&output=embed" title="c）長野站 → Hotel Livemax Premium Nagano Ekimae"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3&destination=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%AA%E3%83%96%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9PREMIUM%E9%95%B7%E9%87%8E%E9%A7%85%E5%89%8D&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">d）長野站 → Dormy Inn Nagano Zenkounoyu</div>
+      <p class="map-walk">出<strong>善光寺口</strong>巴士旋轉處，官網：徒歩約 <strong>3 分</strong>（部分資料寫 1 分——以 2–3 分為準）。地址：長野市北石堂町 1373-1。善光寺口側餐廳／酒吧較多。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%E5%96%84%E5%85%89%E3%81%AE%E6%B9%AF%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3%E9%95%B7%E9%87%8E&hl=zh-TW&z=17&output=embed" title="d）長野站 → Dormy Inn Nagano Zenkounoyu"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E9%95%B7%E9%87%8E%E9%A7%85%E5%96%84%E5%85%89%E5%AF%BA%E5%8F%A3&destination=%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%E5%96%84%E5%85%89%E3%81%AE%E6%B9%AF%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3%E9%95%B7%E9%87%8E&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">e-1）Livemax → 長野東口 #23 巴士站（長電冬季特急）</div>
+      <p class="map-walk">酒店本身在<strong>東口側</strong>，步行回東口巴士區約 <strong>2–4 分</strong>。長電志賀高原急行（冬季）在東口 <strong>#23</strong> 乘車。<strong>已定早班</strong>約 10:40（出發前以 PDF 為準）；朋友想早上山。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3%2023%E7%95%AA%E3%81%AE%E3%82%8A%E3%81%B0&hl=zh-TW&z=17&output=embed" title="e-1）Livemax → 長野東口 #23 巴士站（長電冬季特急）"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%AA%E3%83%96%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9PREMIUM%E9%95%B7%E9%87%8E%E9%A7%85%E5%89%8D&destination=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3%2023%E7%95%AA%E3%81%AE%E3%82%8A%E3%81%B0&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）<br>長電時刻：nagadenbus.co.jp／express／winter／shigakogen／</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">e-2）Dormy Inn → 長野東口 #23 巴士站</div>
+      <p class="map-walk">由善光寺口側酒店，經車站<strong>東西自由通路</strong>走到東口（構內約 3–5 分）再找 #23，合計約 <strong>8–12 分</strong>（拖行李請多留）。不要出站繞馬路——跟「東口／バス」標示穿過車站最穩。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3%2023%E7%95%AA%E3%81%AE%E3%82%8A%E3%81%B0&hl=zh-TW&z=16&output=embed" title="e-2）Dormy Inn → 長野東口 #23 巴士站"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%E5%96%84%E5%85%89%E3%81%AE%E6%B9%AF%E3%83%89%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%A4%E3%83%B3%E9%95%B7%E9%87%8E&destination=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3%2023%E7%95%AA%E3%81%AE%E3%82%8A%E3%81%B0&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">f）發哺溫泉 S21 ↔ Hotel Higashidate</div>
+      <p class="map-walk">巴士停<strong>發哺溫泉（S21）</strong>後，酒店徒歩約 <strong>2 分</strong>（官網／JTB）。地址：山ノ内町平穏 7149。<strong>冬季注意：</strong>車不能開到玄關——到巴士站後致電酒店 <span class="mono">0269-34-2534</span>，職員會協助搬行李／泊車移動。最遲入住約 17:00。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E3%83%9B%E3%83%86%E3%83%AB%E3%81%B2%E3%81%8C%E3%81%97%E3%81%A0%E3%81%A6%20%E7%99%BA%E5%93%BA%E6%B8%A9%E6%B3%89&hl=zh-TW&z=16&output=embed" title="f）發哺溫泉 S21 ↔ Hotel Higashidate"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%99%BA%E5%93%BA%E6%B8%A9%E6%B3%89%E3%83%90%E3%82%B9%E5%81%9C&destination=%E3%83%9B%E3%83%86%E3%83%AB%E3%81%B2%E3%81%8C%E3%81%97%E3%81%A0%E3%81%A6%20%E7%99%BA%E5%93%BA%E6%B8%A9%E6%B3%89&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）<br>非固定「接駁巴士班次」——是抵達後致電請酒店協助搬運。</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">g）Higashidate／山之驛 → 長野（回程巴士）</div>
+      <p class="map-walk">周四下山：可在<strong>發哺 S21</strong>直接搭回長野東口，或滑到中央區於<strong>志賀高原山之驛（S18）</strong>乘同一系統回程（較方便若你在一ノ瀬／丸池一帶結束）。車程約 70–80 分到長野東口。到站後轉新幹線往上野。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F%E5%B1%B1%E3%81%AE%E9%A7%85&hl=zh-TW&z=13&output=embed" title="g）Higashidate／山之驛 → 長野（回程巴士）"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%E3%83%9B%E3%83%86%E3%83%AB%E3%81%B2%E3%81%8C%E3%81%97%E3%81%A0%E3%81%A6%20%E7%99%BA%E5%93%BA%E6%B8%A9%E6%B3%89&destination=%E9%95%B7%E9%87%8E%E9%A7%85%E6%9D%B1%E5%8F%A3&travelmode=transit" target="_blank" rel="noopener">在 Google 地圖開啟</a>（公共交通路線）<br>回程時刻請對 2025–26 PDF，2026–27 約 11 月再截圖確認。</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">h）JR 上野（新幹線到達）→ &amp; Here Tokyo Ueno</div>
+      <p class="map-walk">新幹線到上野後，出站往<strong>不忍口（しのばず口）</strong>，沿官網路線徒歩約 <strong>7–8 分</strong>（約 550–650m）。地址：台東區上野 2-11-18。亦可出京成上野再步行（見下卡）。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%26Here%20TOKYO%20UENO&hl=zh-TW&z=16&output=embed" title="h）JR 上野（新幹線到達）→ &amp; Here Tokyo Ueno"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=JR%E4%B8%8A%E9%87%8E%E9%A7%85&destination=%26Here%20TOKYO%20UENO&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）</p>
+    </div>
+
+    <div class="map-card">
+      <div class="map-title">i）&amp; Here → 京成上野／Skyliner → 成田（周五）</div>
+      <p class="map-walk">酒店到<strong>京成上野</strong>徒歩約 <strong>3–5 分</strong>（約 240–400m）。乘 Skyliner 約 <strong>41–45 分</strong>到成田 T1。<strong>HX611 20:25</strong> → 建議約 <strong>16:30–17:00</strong> 離酒店、約 <strong>18:25</strong> 前到機場（門到門約 70–90 分）；<strong>勿</strong>同一天從志賀直接趕成田。詳見 <a href="#flights">航班</a>。</p>
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://maps.google.com/maps?q=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85&hl=zh-TW&z=16&output=embed" title="i）&amp; Here → 京成上野／Skyliner → 成田（周五）"></iframe>
+      <p class="map-cap"><a href="https://www.google.com/maps/dir/?api=1&origin=%26Here%20TOKYO%20UENO&destination=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85&travelmode=walking" target="_blank" rel="noopener">在 Google 地圖開啟</a>（步行路線）<br>票：回程 Skyliner 建議預先買；到機場後跟航班航廈標示。</p>
+    </div>
+
+</section>
+
+<section id="eat">
+  <h2>食 · 食べログ精選</h2>
+  <p class="muted small" style="margin-top:-.3rem">分數於 2026 年 9 月在食べログ核實。只列你們真的會去的店。滑雪區 2026 冬季時間請出發前再確認。</p>
+
+  <h3>長野站 · 周一晚／周二巴士前</h3>
+  <img class="photo tall" src="images/nagano-zenkoji.jpg" alt="長野善光寺外觀氣氛" loading="lazy" width="1280" height="853">
+  <p class="photo-cap">善光寺一帶（車站善光寺口步行可達；餐廳／酒吧多在此側）· Wikimedia —— 非個別餐廳店面照</p>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">らぁめん みそ家 · Ramen Misoya</p>
+        <p class="rest-jp">長野駅前 · 信州味噌拉麵／沾麵</p>
+      </div>
+      <div class="score">3.62<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">周一深夜 OK</span>
+      <span class="tag">約 ¥1,000</span>
+      <span class="tag warn">常排隊</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：濃郁信州味噌湯；石臼粗麵／沾麵；約 11:00–24:00。</li>
+      <li>注意：只有吧台，常要等 —— 兩人帶行李下新幹線後仍可接受。</li>
+    </ul>
+    <p class="why"><strong>為何周一：</strong>善光寺口步行 2–3 分 · 吃得飽 · 開到深夜。<a href="https://tabelog.com/nagano/A2001/A200101/20001391/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">信州長屋酒場 · Shinshu Nagaya Sakaba</p>
+        <p class="rest-jp">長野駅前 · 居酒屋／當地小菜</p>
+      </div>
+      <div class="score">3.47<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">兩人居酒屋</span>
+      <span class="tag">馬刺 · おやき</span>
+      <span class="tag">當地清酒</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：一站式信州 —— 馬刺、おやき、野澤菜、蕎麥配菜、清酒選擇不錯。</li>
+      <li>注意：晚上人均約 ¥5–6k（食べログ平均）；約 16:45 開門。</li>
+    </ul>
+    <p class="why"><strong>為何周一：</strong>旅途後想坐下來喝啤酒／清酒多過再來一碗麵。<a href="https://tabelog.com/nagano/A2001/A200101/20011312/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">蕎麦旬菜 こすげ · Soba Shunsai Kosuge</p>
+        <p class="rest-jp">車站約 5 分 · 手打蕎麥（EAST 百名店 2025）</p>
+      </div>
+      <div class="score">3.73<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">強蕎麥 · 百名店</span>
+      <span class="tag bad">周一・日休</span>
+      <span class="tag bad">今次略過</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：香氣足的粗磨蕎麥；當地清酒；EAST 百名店 2025。</li>
+      <li>注意：周一休；午市短且需電話預約。本行程<strong>二 15 早班上山</strong> —— 唔夾こすげ／すき亭午餐。</li>
+    </ul>
+    <p class="why"><strong>今次略過：</strong>朋友想早上山；百名店午餐要改搭約 14:30 才夾。<a href="https://tabelog.com/nagano/A2001/A200101/20016783/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://kosuge-soba.com/" target="_blank" rel="noopener">官網 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">ナカジマ会館 · Nakajima Kaikan</p>
+        <p class="rest-jp">MIDORI 長野 2F · 站食蕎麥</p>
+      </div>
+      <div class="score">3.49<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">周二早餐</span>
+      <span class="tag">快</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：簡單天婦羅玉子蕎麥；旅行早餐能量剛好。</li>
+      <li>注意：站食；現金／交通 IC —— 當日再確認付款方式。</li>
+    </ul>
+    <p class="why"><strong>為何周二早上：</strong>車站綜合體內，東口 #23 前。<a href="https://tabelog.com/nagano/A2001/A200101/20018770/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">いろは堂 MIDORI長野 · Irohado</p>
+        <p class="rest-jp">車站 · おやき 外帶</p>
+      </div>
+      <div class="score">3.34<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">小食／手信</span>
+      <span class="tag">野澤菜おやき</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：經典長野おやき（尤其野澤菜）—— 不是正餐，但是地道一口。</li>
+    </ul>
+    <p class="why"><strong>為何：</strong>上巴士前或抵達後順手買。<a href="https://tabelog.com/nagano/A2001/A200101/20018979/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <h3>志賀／發哺／山ノ内／湯田中 · 周二–周四</h3>
+
+  <div class="callout">
+    <strong>發哺現實：</strong>酒店以外幾乎沒有獨立晚餐店。預設＝<strong>Hotel Higashidate 晚餐</strong>。山上食べログ分數普遍不高 —— 用來參考午餐／繞道，不是「必訂」。
+  </div>
+
+  <div class="callout bad">
+    <strong>試算表備註 — 山の実（Yamanomi 蕎麥）Tabelog 4.05：</strong>好店，但食べログ寫明<strong>約 11 月底–4 月底休</strong>（積雪無法進出）。位置在北志賀 Holiday Hotel／Dragondola —— 不是發哺。<strong>今次 12 月行程略過。</strong>
+    <a href="https://tabelog.com/nagano/A2001/A200104/20000397/" target="_blank" rel="noopener">食べログ →</a>
+  </div>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">Hotel Higashidate 餐飲</p>
+        <p class="rest-jp">發哺溫泉 · 酒店晚餐／早餐</p>
+      </div>
+      <div class="score" style="font-size:.85rem;line-height:1.2">n/a<span>hotel</span></div>
+    </div>
+    <img class="photo" src="images/hotel-higashidate-dining.jpg" alt="Hotel Higashidate 餐飲氣氛" loading="lazy" width="600" height="400">
+    <p class="photo-cap">酒店餐飲（官網）—— 發哺滑雪夜最可靠方案</p>
+    <div class="tags">
+      <span class="tag good">夜間 Plan A</span>
+      <span class="tag warn">確認餐方案</span>
+    </div>
+    <ul class="clean small">
+      <li>滑雪後山上晚餐 —— 不必黑夜找 taxi。</li>
+      <li>確認房價是否包晚餐；最遲入住約 17:00。</li>
+    </ul>
+    <p class="why"><strong>為何周二／三：</strong>最近、最暖、最穩。<a href="https://higashidate.com/cuisine/" target="_blank" rel="noopener">酒店料理 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">山ノ内大勝軒 · Yamanouchi Daishoken</p>
+        <p class="rest-jp">冬季：一ノ瀬ファミリー休息所內 · 拉麵</p>
+      </div>
+      <div class="score">3.36<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">滑雪午餐</span>
+      <span class="tag bad">周二休</span>
+      <span class="tag warn">不在發哺門口</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：經典大勝軒風味；冬季在一ノ瀬ファミリー免費休息所內。</li>
+      <li>注意：需滑／連往一ノ瀬；周二休（所以周三才是日子）。</li>
+    </ul>
+    <p class="why"><strong>為何周三午餐：</strong>若路線往那邊，山上真正當地拉麵。<a href="https://tabelog.com/nagano/A2001/A200104/20024358/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">YUDANAKA BREWERY COMPLEX U</p>
+        <p class="rest-jp">湯田中 · 手工啤酒 + 信州小食</p>
+      </div>
+      <div class="score">3.25<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">四 12/17 已定</span>
+      <span class="tag good">兩人啤酒</span>
+      <span class="tag">下山順路</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：自釀啤酒；輕鬆食物；可選 2 樓日歸溫泉／私人湯房。</li>
+      <li>注意：湯田中站徒歩約 10 分。營業約 <strong>10:00–18:00</strong>（飲食 L.O. 約 17:00；季節或改）。<strong>不定休</strong>——出發前對官網日曆。私人 SPA 需預先網上預約。</li>
+    </ul>
+    <p class="why"><strong>為何 12/17：</strong>退房落山順路 brunch／午餐，之後轉長野新幹線上東京。<a href="https://tabelog.com/nagano/A2001/A200104/20026081/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://yudanaka-u.jp/" target="_blank" rel="noopener">官網 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">関英ドライブイン · Sekiei Drive-in</p>
+        <p class="rest-jp">湯田中 · 實在食堂</p>
+      </div>
+      <div class="score">3.58<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">區內分數較高</span>
+      <span class="tag bad">休息日古怪</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：扎實 drive-in 定食 —— 凍天後很飽。</li>
+      <li>注意：食べログ營業日看起來很稀（周一／二／六／日休）；<strong>去之前務必確認</strong>。</li>
+    </ul>
+    <p class="why"><strong>為何：</strong>只在已到湯田中且當天有開時。<a href="https://tabelog.com/nagano/A2001/A200104/20018866/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <p class="small muted">備選：山上午餐 <strong>レストラン イタクラ</strong>（溫泉 Hotel Itakura —— 志賀設施頁有味噌拉麵／醬汁豬扒飯；冬季約 11:00–14:30，請確認）。周四巴士若停山之驛，食堂約 3.26。</p>
+
+  <h3>東京 · 周四晚（ちんや）／周五午餐選項</h3>
+  <img class="photo" src="images/asakusa-sensoji.jpg" alt="淺草寺寶蔵門與五重塔" loading="lazy" width="1280" height="853">
+  <p class="photo-cap">淺草寺（寶蔵門・五重塔）—— 周四晚餐散步氣氛；非個別餐廳店面照 · Wikimedia</p>
+
+
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">すき焼き ちんや 浅草本店 · Chin'ya</p>
+        <p class="rest-jp">淺草 · 壽喜燒老字號（明治創業／百名店級）</p>
+      </div>
+      <div class="score">3.64<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag warn">四 12/17 計劃</span>
+      <span class="tag good">壽喜燒</span>
+      <span class="tag warn">等朋友確認後訂</span>
+    </div>
+    <ul class="clean small">
+      <li>地址：東京都台東区花川戸 2-16-1 · 東武／地鐵<strong>淺草</strong>徒歩約 6 分（上野電車約 10–15 分）。</li>
+      <li>營業：平日午餐約 11:00–15:00 · 晚餐約 <strong>16:30–21:30</strong>（料理 L.O. 約 20:00）；土日祝約 11:00–21:30。</li>
+      <li>特色：淺草最古老壽喜燒系之一；「適サシ」黑毛和牛；有英語菜單。晚市兩人約 <strong>¥10,000–15,000／人</strong>（視套餐）。</li>
+      <li>訂位：網上預約（Tabelog／店舖預約頁）· 電話 050-5484-7052。建議訂約 <strong>18:00–19:00</strong> 入座，之後返上野選 Cocktail Works 或 The TRAD。<strong>Billy 先問朋友再訂。</strong></li>
+    </ul>
+    <p class="why"><strong>為何 12/17 晚：</strong>新幹線後由上野易達；正式壽喜燒合兩人；之後步行／電車返上野喝 cocktail。<a href="https://tabelog.com/tokyo/A1311/A131102/13268750/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://ghyv600.gorp.jp/" target="_blank" rel="noopener">預約頁 →</a> · <a href="https://chinya.co.jp/location/" target="_blank" rel="noopener">官網 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">RAMEN MATSUI</p>
+        <p class="rest-jp">新宿御苑前／四谷 · 預約制拉麵（Michelin Bib／食べログ百名店）</p>
+      </div>
+      <div class="score">3.81<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">五 12/18 選項 A</span>
+      <span class="tag good">完全預約</span>
+      <span class="tag warn">現金 only</span>
+    </div>
+    <ul class="clean small">
+      <li>地址：東京都新宿区四谷 4-25-10 ダイアパレス御苑前 B-2 · 新宿御苑前駅徒歩約 6 分。</li>
+      <li>營業：月・火・金・土・日・祝 約 <strong>11:00–15:30</strong>；水・木定休；每月不定休 —— 對 <a href="https://www.instagram.com/ramen_matsui/" target="_blank" rel="noopener">@ramen_matsui</a>。</li>
+      <li>訂位：<a href="https://www.tablecheck.com/en/shops/ramen-matsui/reserve" target="_blank" rel="noopener">TableCheck</a> · 到店<strong>前 3 天 12:00</strong>開放（12/18 → <strong>12/15 12:00</strong>）· 預訂費 ¥500／人（不退）· 遲到／24h 內取消 ¥2,000／人 · 座位約 30 分 · 提前 10 分到。</li>
+      <li>注意：一人一碗拉麵；無素食／無麩質；香水禁止；12 歲以下不可；大行李先 Instagram DM。</li>
+    </ul>
+    <p class="why"><strong>為何列作 12/18 選項：</strong>周五有開、只做午餐，起飛前合拍；朋友若想試別的，改選上野／淺草即可（唔使訂）。<a href="https://tabelog.com/tokyo/A1304/A130402/13285098/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://guide.michelin.com/en/tokyo-region/tokyo/restaurant/ramen-matsui" target="_blank" rel="noopener">Michelin →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">浅草名代らーめん 与ろゐ屋 · Yoroiya</p>
+        <p class="rest-jp">淺草 · 柚子醬油拉麵 + 餃子</p>
+      </div>
+      <div class="score">3.65<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">五 12/18 選項 B</span>
+      <span class="tag">約 ¥1,000</span>
+      <span class="tag warn">常排隊</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：清爽東京醬油配柚子；手造餃子；每日約 11:00–21:00。</li>
+      <li>注意：遊客多 —— 避開高峰或接受短等。</li>
+    </ul>
+    <p class="why"><strong>為何 12/18 選項 B：</strong>近上野、唔使訂；朋友唔想繞四谷時用。<a href="https://tabelog.com/tokyo/A1311/A131102/13003715/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">俺の生きる道 上野店 · Ore no Ikiru Michi</p>
+        <p class="rest-jp">上野廣小路 · 濃厚拉麵</p>
+      </div>
+      <div class="score">3.62<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">近酒店</span>
+      <span class="tag">開到深夜</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：重口味、很飽 —— 跟清淡相反。</li>
+      <li>注意：偏 junk-delicious；高峰會排。</li>
+    </ul>
+    <p class="why"><strong>為何周四晚：</strong>新幹線後由 &amp; Here Ueno 步行可達。<a href="https://tabelog.com/tokyo/A1311/A131101/13285028/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">喜多方食堂 浅草本店 · Kitakata Shokudo</p>
+        <p class="rest-jp">淺草 · 喜多方拉麵</p>
+      </div>
+      <div class="score">3.66<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">實在</span>
+      <span class="tag bad">周三休</span>
+      <span class="tag warn">湯可能售罄</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：東京內正宗喜多方風味。</li>
+      <li>注意：偏早／午；周五午餐前再確認時間。</li>
+    </ul>
+    <p class="why"><strong>為何 12/18 選項 B（若有開）：</strong>起飛前一碗很飽；近淺草。<a href="https://tabelog.com/tokyo/A1311/A131101/13158335/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">まぐろ人 · Magurobito</p>
+        <p class="rest-jp">雷門 · 站壽司</p>
+      </div>
+      <div class="score">3.41<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">輕鬆兩人</span>
+      <span class="tag">鮪魚為主</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：站台壽司的鮪魚水準不錯；快、不矯情。</li>
+      <li>注意：站食；可能忙 —— 故意不是 omakase。</li>
+    </ul>
+    <p class="why"><strong>為何周四：</strong>阿美橫／淺草散步 + 壽司，不必 ¥15k 房間。<a href="https://tabelog.com/tokyo/A1311/A131102/13003723/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">牛丼専門サンボ · Sambo</p>
+        <p class="rest-jp">上野／末廣町附近 · 經典牛丼</p>
+      </div>
+      <div class="score">3.49<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">傳奇平價</span>
+      <span class="tag bad">周四休</span>
+    </div>
+    <ul class="clean small">
+      <li>好評：老派上野牛丼 —— 快速補充燃料。</li>
+      <li>注意：<strong>周四休</strong> —— 今次行程只剩周五午餐。</li>
+    </ul>
+    <p class="why"><strong>為何周五：</strong>比拉麵更快、搭 Skyliner 前。<a href="https://tabelog.com/tokyo/A1311/A131101/13006063/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <div class="callout">
+    <strong>RAMEN MATSUI（四谷）3.81：</strong><strong>五 12/18 午餐選項 A</strong>（未定死）。完全預約制 · TableCheck 於到店前 3 天 12:00 開放（即 <strong>12/15 12:00</strong>）· 現金 only。朋友想試別的 → 選上野／淺草卡（与ろゐ屋、喜多方等）。
+    <a href="https://www.tablecheck.com/en/shops/ramen-matsui/reserve" target="_blank" rel="noopener">TableCheck →</a>
+  </div>
+</section>
+
+<section id="bars">
+  <h2>酒吧 · Cocktail bars</h2>
+  <p class="muted small" style="margin-top:-.3rem">適合約 38 歲兩位男士：正式 cocktail／威士忌吧，不是夜店。分數 2026-09-26（HKT）自食べログ核實。滑雪區未找到可信 cocktail bar —— 發哺晚上以酒店為主。</p>
+
+  <h3>長野 · 周一晚（車站附近）</h3>
+  <img class="photo" src="images/nagano-station-east.jpg" alt="長野站東口夜前氣氛參考" loading="lazy" width="1280" height="853">
+  <p class="photo-cap">長野站一帶 —— 下列酒吧均在善光寺口步行範圍內；無個別店面可用授權圖，故用車站區氣氛照</p>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">MOSCO · モスコ</p>
+        <p class="rest-jp">長野駅 善光寺口 徒歩約 1 分 · 鮮果 cocktail bar</p>
+      </div>
+      <div class="score">3.03<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">周一營業</span>
+      <span class="tag">鮮果雞尾酒</span>
+      <span class="tag">約 ¥2–3k</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>為何適合：</strong>車站地下、新鮮水果 cocktail 為賣點；旅途後兩人喝一杯很輕鬆，不必正裝。</li>
+      <li>時間：月–六約 19:00–翌 3:00（Hot Pepper／店訊）；周日再確認。</li>
+      <li>地址：長野市南千歳 1-19-9 theBOSTON ビル B1F</li>
+    </ul>
+    <p class="why"><a href="https://tabelog.com/nagano/A2001/A200101/20018040/" target="_blank" rel="noopener">食べログ →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">エランドール · Elan d’Or</p>
+        <p class="rest-jp">長野駅 善光寺口 徒歩約 5 分 · 啤酒 + cocktail</p>
+      </div>
+      <div class="score">3.07<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag good">周一營業</span>
+      <span class="tag">世界啤酒</span>
+      <span class="tag">有食物</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>為何適合：</strong>約 100 種世界啤酒 + 專業 bartender cocktail；有食物，兩人可當第二站慢慢喝。</li>
+      <li>時間：月–六約 18:00–03:00（Suntory BAR-NAVI／食べログ）；不定休。</li>
+      <li>地址：長野市北石堂町 1391-5 錦会館 2F</li>
+    </ul>
+    <p class="why"><a href="https://tabelog.com/nagano/A2001/A200101/20002622/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://bar-navi.suntory.co.jp/shop/0262231618/" target="_blank" rel="noopener">BAR-NAVI →</a></p>
+  </article>
+
+  <div class="callout">
+    <strong>略過 BAR EDEN：</strong>離站也近、cocktail 種類多，但<strong>每周一定休</strong> —— 剛好撞上你們長野夜。Cloud Nine 偏 Irish pub／「Flavor Blaster」表演向，不是經典 cocktail 優先。
+  </div>
+
+  <h3>東京 上野／湯島／淺草 · 周四晚</h3>
+  <img class="photo" src="images/ueno-park-exit.jpg" alt="上野公園出口與車站一帶" loading="lazy" width="1280" height="853">
+  <p class="photo-cap">上野站公園口一帶 —— 下列酒吧步行可達 &amp; Here Ueno；無個別店授權圖，用上野氣氛照</p>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">BAR COCKTAIL WORKS 上野</p>
+        <p class="rest-jp">京成上野／JR 上野 徒歩約 3 分 · 創作 cocktail + 輕食</p>
+      </div>
+      <div class="score">3.33<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag warn">四 12/17 選項 A</span>
+      <span class="tag good">最靠近酒店</span>
+      <span class="tag">世界賽級調酒</span>
+      <span class="tag bad">全席禁煙</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>選項 A · cocktail：</strong>上野少有的正式 mixology／鮮果 cocktail；店主有世界大賽經歷；兩人聊天喝。排在 <strong>ちんや</strong> 之後；&amp; Here／京成上野徒歩約 3–8 分。<strong>全席禁煙</strong> —— 唔可以喺度抽雪茄。</li>
+      <li>時間：每日約 17:30–02:30；年末年始再確認。Charge 約 ¥660／人。預算夜約 ¥5–6k。</li>
+      <li>同 <strong>The TRAD</strong> 二揀一（問朋友）；見 <a href="#checklist">訂位清單</a>。</li>
+    </ul>
+    <p class="why"><strong>選項 A · 等朋友揀。</strong> <a href="https://tabelog.com/tokyo/A1311/A131101/13184760/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://cocktailworks-ueno.foodre.jp/" target="_blank" rel="noopener">官網 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">The TRAD 湯島・上野バー</p>
+        <p class="rest-jp">上野廣小路／湯島 徒歩數分 · whisky + cocktail + 雪茄</p>
+      </div>
+      <div class="score">3.10<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag warn">四 12/17 選項 B</span>
+      <span class="tag good">可坐低抽雪茄</span>
+      <span class="tag">旅客評價較穩</span>
+      <span class="tag">席料約 ¥1,200</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>選項 B · cigar bar：</strong>全店可吸（吸烟目的店）；古巴等雪茄＋威士忌／鮮果 cocktail。Google 約 4.5（約 99 則）；英文旅客多讚雪茄價錢合理、酒選擇強。例：Montecristo No.4 約 ¥3,520（菜單會變）。</li>
+      <li>時間：日–四約 18:00–23:30；金六至 24:00。席料約 ¥1,200／人。雪茄或需現金。電話 03-5812-4800 · 可預約。</li>
+      <li>同 <strong>COCKTAIL WORKS</strong> 二揀一（問朋友）；壽喜燒後返上野一帶即可。</li>
+    </ul>
+    <p class="why"><strong>選項 B · 等朋友揀。</strong> <a href="https://tabelog.com/tokyo/A1311/A131101/13193086/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://the-trad.net/" target="_blank" rel="noopener">官網 →</a></p>
+  </article>
+
+  <article class="rest">
+    <div class="rest-top">
+      <div>
+        <p class="rest-name">BAR bishudor · ビシュドール</p>
+        <p class="rest-jp">上野／御徒町 徒歩約 3 分 · 地下隱密 cocktail bar</p>
+      </div>
+      <div class="score">3.03<span>Tabelog</span></div>
+    </div>
+    <div class="tags">
+      <span class="tag">隱密地下室</span>
+      <span class="tag">鮮果／威士忌</span>
+      <span class="tag">約 10 席</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>為何適合：</strong>小而安靜的地下吧；旬果 cocktail + 嚴選威士忌／craft gin —— 適合晚餐後第二站，不是鬧區蹦迪。</li>
+      <li>時間：月–金約 18:00–02:00；土 17:00–；日較早收（BAR-NAVI／食べログ）。不定休。</li>
+    </ul>
+    <p class="why"><a href="https://tabelog.com/tokyo/A1311/A131101/13316767/" target="_blank" rel="noopener">食べログ →</a> · <a href="https://bar-navi.suntory.co.jp/shop/S000012945/" target="_blank" rel="noopener">BAR-NAVI →</a></p>
+  </article>
+
+  <div class="callout good">
+    <strong>備選（淺草）：</strong>ReBAR（雷門 River Terrace，2025 年開，隅田川夜景；周二休 —— 周四 OK）· KAMINARI CAFE&amp;BAR（雷門，銀座出身 bartender，火–六；周／一休）。兩者較新，食べログ分數仍在累積；優先仍建議上野三間。
+  </div>
+</section>
+
+
+<section id="checklist">
+  <h2>訂位／預訂清單</h2>
+  <p class="check-meta">勾選會存在本機瀏覽器（同一裝置重開仍在）。狀態只作提醒，唔等於已付款成功。</p>
+  <div class="card">
+    <h3 style="margin-top:0">已完成</h3>
+    <ul class="checklist" id="check-done">
+      <li data-id="flight-hka">
+        <input type="checkbox" id="c-flight-hka" checked disabled>
+        <label for="c-flight-hka"><strong>香港航空 HX604／HX611</strong>（確認信已有）
+          <span class="when">去程 12/14 08:10 HKG T2 → 13:20 NRT T1 · 回程 12/18 20:25 NRT T1 → 00:50+1 HKG T1 · 訂單 NE2608312240145458（CHEUNG CHIHEI；同伴另票請自核）</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">要訂／要確認</h3>
+    <ul class="checklist" id="check-todo">
+      <li data-id="hotel-nagano">
+        <input type="checkbox" id="c-hotel-nagano">
+        <label for="c-hotel-nagano"><strong>一 12/14 長野酒店</strong>：Livemax Premium 或 Dormy Inn 二選一並預訂
+          <span class="when">未選定 · <a href="https://www.hotel-livemax.com/nagano/naganost/" target="_blank" rel="noopener">Livemax</a> · <a href="https://dormy-hotels.com/dormyinn/hotels/nagano/" target="_blank" rel="noopener">Dormy</a></span>
+        </label>
+      </li>
+      <li data-id="hotel-higashidate">
+        <input type="checkbox" id="c-hotel-higashidate">
+        <label for="c-hotel-higashidate"><strong>Hotel Higashidate</strong> 二–三 12/15–16（確認已訂／餐方案包晚餐）
+          <span class="when">最遲入住約 17:00 · <a href="https://higashidate.com/" target="_blank" rel="noopener">higashidate.com</a> · 電話 0269-34-2534</span>
+        </label>
+      </li>
+      <li data-id="hotel-ueno">
+        <input type="checkbox" id="c-hotel-ueno">
+        <label for="c-hotel-ueno"><strong>&amp; Here Tokyo Ueno</strong> 四 12/17
+          <span class="when"><a href="https://andherehotels.jp/tokyoueno/" target="_blank" rel="noopener">andherehotels.jp</a></span>
+        </label>
+      </li>
+      <li data-id="shinkansen">
+        <input type="checkbox" id="c-shinkansen">
+        <label for="c-shinkansen"><strong>北陸新幹線</strong>指定席：上野→長野（12/14）＋ 長野→上野（12/17）
+          <span class="when">建議出發前網購／SmartEX／站務；各約 1h15–1h40</span>
+        </label>
+      </li>
+      <li data-id="skyliner">
+        <input type="checkbox" id="c-skyliner">
+        <label for="c-skyliner"><strong>京成 Skyliner</strong>：NRT→京成上野（12/14）＋ 京成上野／日暮里→NRT（12/18）
+          <span class="when">可預購；回程目標約 16:30–17:00 離上野</span>
+        </label>
+      </li>
+      <li data-id="nagaden">
+        <input type="checkbox" id="c-nagaden">
+        <label for="c-nagaden"><strong>長電冬季特急</strong>：長野東口 #23 → 發哺 S21（12/15 <strong>早班約 10:40</strong>；落山 12/17 另查）
+          <span class="when">已定早上山 · 2026–27 時刻約 <strong>2026 年 11 月</strong>公布 —— 截圖 PDF 核對準時 · <a href="https://www.nagadenbus.co.jp/express/winter/shigakogen/" target="_blank" rel="noopener">官網</a></span>
+        </label>
+      </li>
+      <li data-id="complex-u">
+        <input type="checkbox" id="c-complex-u">
+        <label for="c-complex-u"><strong>COMPLEX U</strong>：對 12/17 營業日曆；私人 SPA 若要則提前網訂
+          <span class="when">不定休 · <a href="https://yudanaka-u.jp/" target="_blank" rel="noopener">yudanaka-u.jp</a></span>
+        </label>
+      </li>
+      <li data-id="chinya">
+        <input type="checkbox" id="c-chinya">
+        <label for="c-chinya"><strong>ちんや（淺草）</strong>壽喜燒 · 四 12/17 晚（約 18:00–19:00）
+          <span class="when"><strong>先問朋友再訂</strong> · <a href="https://ghyv600.gorp.jp/" target="_blank" rel="noopener">預約頁</a> · 之後見下方酒吧二揀一</span>
+        </label>
+      </li>
+      <li data-id="thu-bar">
+        <input type="checkbox" id="c-thu-bar">
+        <label for="c-thu-bar"><strong>四 12/17 晚間酒吧 · 二揀一</strong>（問朋友）
+          <span class="when"><strong>A</strong> <a href="https://cocktailworks-ueno.foodre.jp/" target="_blank" rel="noopener">COCKTAIL WORKS 上野</a>（調酒・禁煙）· <strong>B</strong> <a href="https://the-trad.net/" target="_blank" rel="noopener">The TRAD 湯島</a>（威士忌＋雪茄・可坐低抽）· 多數即場／The TRAD 可電 03-5812-4800</span>
+        </label>
+      </li>
+      <li data-id="matsui">
+        <input type="checkbox" id="c-matsui">
+        <label for="c-matsui"><strong>RAMEN MATSUI</strong>（若選 12/18 午餐選項 A）
+          <span class="when">TableCheck 於 <strong>12/15 12:00</strong> 開搶 · 未定則可略過 · <a href="https://www.tablecheck.com/en/shops/ramen-matsui/reserve" target="_blank" rel="noopener">TableCheck</a></span>
+        </label>
+      </li>
+      <li data-id="hka-checkin">
+        <input type="checkbox" id="c-hka-checkin">
+        <label for="c-hka-checkin"><strong>港航網上預辦登機</strong>（起飛前 48h–1.5h）＋同伴機票時間核對
+          <span class="when">去程留意 <strong>HKG T2</strong>；回程 NRT T1</span>
+        </label>
+      </li>
+    </ul>
+    <div class="check-actions">
+      <button type="button" id="check-reset">清除本機勾選</button>
+    </div>
+  </div>
+  <div class="callout" style="margin-bottom:0">
+    <strong>優先次序建議：</strong>長野酒店選定 → Higashidate／&amp; Here 確認 → 新幹線＋Skyliner →（朋友 OK 後）ちんや → 朋友揀四晚酒吧（Cocktail Works／The TRAD）→ 11 月對長電時刻 → COMPLEX U 日曆 → 若食 Matsui 則 12/15 中午開搶。
+  </div>
+</section>
+
+<section id="tips">
+  <h2>實用提示</h2>
+  <div class="card">
+    <ul class="clean tips">
+      <li><strong>現金：</strong>長野／滑雪小鎮仍有用；市區很多拉麵收 IC／PayPay —— <strong>RAMEN MATSUI</strong> 與 こすげ 為現金 only（Matsui 建議帶 ¥1,000 紙鈔）。若去 <strong>The TRAD</strong>：旅客報告雪茄或需現金。</li>
+      <li><strong>巴士：</strong>2026–27 時刻一出（約 11 月）就截圖長電冬季 PDF。東口 <span class="mono">#23</span> · 發哺 <span class="mono">S21</span>。</li>
+      <li><strong>行李：</strong>可考慮由周一實際入住的長野 shortlist 酒店寄往 <strong>&amp; Here Tokyo Ueno</strong>，周四輕裝滑雪；先向所選酒店確認。</li>
+      <li><strong>入住：</strong>Higashidate 最遲約 17:00 —— 若上午不滑，別錯過下午巴士。</li>
+      <li><strong>機場：</strong><strong>HX611</strong> 20:25 NRT T1 → 約 <strong>16:30–17:00</strong> 離上野、約 <strong>18:25</strong> 前到機場。去程 <strong>HX604</strong> 由 <strong>HKG T2</strong> 出發。若選 Matsui：TableCheck 於 <strong>12/15 12:00</strong> 開搶。</li>
+      <li><strong>海拔：</strong>發哺約 1,500m+ —— 多喝水，第一天巴士後啤酒別太猛。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>來源</h2>
+  <div class="card small">
+    <ul class="clean">
+      <li>食べログ店舖頁（分數 2026 年 9 月）—— 上文連結</li>
+      <li>長電冬季特急：<a href="https://www.nagadenbus.co.jp/express/winter/shigakogen/" target="_blank" rel="noopener">nagadenbus.co.jp</a></li>
+      <li>Hotel Livemax Premium Nagano Ekimae：<a href="https://www.hotel-livemax.com/nagano/naganost/" target="_blank" rel="noopener">hotel-livemax.com/nagano/naganost</a></li>
+      <li>Dormy Inn Nagano Zenkounoyu：<a href="https://dormy-hotels.com/dormyinn/hotels/nagano/" target="_blank" rel="noopener">dormy-hotels.com/dormyinn/hotels/nagano</a></li>
+      <li>Hotel Higashidate：<a href="https://higashidate.com/" target="_blank" rel="noopener">higashidate.com</a>（含餐飲圖）</li>
+      <li>&amp; Here Tokyo Ueno：<a href="https://andherehotels.jp/tokyoueno/" target="_blank" rel="noopener">andherehotels.jp</a></li>
+      <li>Yudanaka Brewery：<a href="https://yudanaka-u.jp/" target="_blank" rel="noopener">yudanaka-u.jp</a></li>
+      <li>すき焼き ちんや：<a href="https://ghyv600.gorp.jp/" target="_blank" rel="noopener">預約頁</a> · <a href="https://chinya.co.jp/location/" target="_blank" rel="noopener">chinya.co.jp</a> · Tabelog</li>
+      <li>航班：香港航空電子行程 2026-08-31（HX604／HX611；訂單 NE2608312240145458）</li>
+      <li>RAMEN MATSUI：<a href="https://www.tablecheck.com/en/shops/ramen-matsui/reserve" target="_blank" rel="noopener">TableCheck</a> · <a href="https://www.instagram.com/ramen_matsui/" target="_blank" rel="noopener">Instagram</a> · Tabelog／Michelin</li>
+      <li>志賀高原設施「食」清單：shigakogen.gr.jp</li>
+      <li>圖片：Wikimedia Commons（CC BY-SA／標明授權）+ 酒店官網；詳見 <span class="mono">RESEARCH.md</span></li>
+      <li>交通步行核實：酒店官網 access 頁、長電巴士、&amp; Here access；地圖查詢字串見 <span class="mono">RESEARCH.md</span></li>
+      <li>原始筆記：本資料夾 <span class="mono">RESEARCH.md</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  為 Billy 2026 年 12 月日本滑雪之旅而建 · Plan C · 2 人 · zh-HK／繁體中文 · 單檔離線 HTML · 分數非虛構 · 出發前請再確認冬季營業時間。食べログ分數擷取於 2026-09-26（HKT）；12/18 MATSUI 於 2026-09-27 列作午餐選項（未定死）；航班詳情同日由確認信寫入；12/17 晚餐 ちんや 計劃（等朋友確認）；訂位清單同日加入；二 15 早班上山（朋友偏好）於 2026-09-28 鎖入；四 17 晚 Cocktail Works／The TRAD 二揀一（雪茄選項）同日加入訂位清單。
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'tokyo-ski-dec2026-checklist-v1';
+  var root = document.getElementById('check-todo');
+  if (!root) return;
+  var boxes = root.querySelectorAll('input[type="checkbox"]');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
+  function syncLi(box) {
+    var li = box.closest('li');
+    if (li) li.classList.toggle('done', box.checked);
+  }
+  boxes.forEach(function (box) {
+    var id = box.id;
+    if (saved[id]) box.checked = true;
+    syncLi(box);
+    box.addEventListener('change', function () {
+      var state = {};
+      boxes.forEach(function (b) { state[b.id] = b.checked; });
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      syncLi(box);
+    });
+  });
+  var reset = document.getElementById('check-reset');
+  if (reset) reset.addEventListener('click', function () {
+    boxes.forEach(function (b) { b.checked = false; syncLi(b); });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

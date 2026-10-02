@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1c2c">
+<!-- checklist localStorage bumped v3 → v4 (2026-09-28): Billy pacing — luggage-first; Dec 23 transfer-only (no zoo); zoo Dec 24; Malus-or-rest Dec 25; max 1 highlight/day -->
+<title>北海道家庭行程簡報 · 2026年12月20–26日 · 1大2小 · トマム＋旭川</title>
+<style>
+  :root {
+    --bg: #0b1c2c;
+    --bg2: #12263a;
+    --card: #163049;
+    --card-border: rgba(186, 214, 240, 0.14);
+    --text: #e8f1f8;
+    --muted: #9bb0c4;
+    --accent: #7ec9a8;
+    --accent2: #c9ebe0;
+    --snow: #f4f8fb;
+    --good: #6bcf8e;
+    --warn: #e8b86d;
+    --bad: #e07a7a;
+    --chip: #1e3d58;
+    --radius: 14px;
+    --shadow: 0 8px 28px rgba(0,0,0,.28);
+    --font: "Segoe UI", "PingFang HK", "Noto Sans TC", "Hiragino Sans", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #1a4a45 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #243f5a 0%, transparent 50%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a { color: var(--accent2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #fff; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 3.5rem; }
+  header.hero {
+    padding: 1.75rem 1.25rem 1.5rem;
+    border-radius: calc(var(--radius) + 4px);
+    background:
+      linear-gradient(145deg, rgba(126,201,168,.18), transparent 45%),
+      linear-gradient(180deg, #1a3550, #102536);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: .55rem;
+  }
+  h1 {
+    font-size: clamp(1.55rem, 4.5vw, 2rem);
+    line-height: 1.25;
+    margin: 0 0 .6rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+  }
+  .sub { color: var(--muted); margin: 0 0 1rem; font-size: .95rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chip {
+    background: var(--chip);
+    border: 1px solid var(--card-border);
+    color: var(--snow);
+    padding: .28rem .65rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+  }
+  nav.toc {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+    margin: 1rem 0 1.5rem;
+    position: sticky; top: 0; z-index: 5;
+    padding: .55rem 0;
+    background: linear-gradient(180deg, rgba(11,28,44,.96), rgba(11,28,44,.88));
+    backdrop-filter: blur(8px);
+  }
+  nav.toc a {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    color: var(--accent2);
+    text-decoration: none;
+    padding: .4rem .7rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+  nav.toc a:hover { background: #1d4563; color: #fff; }
+  section { margin-bottom: 1.75rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin: 0 0 .85rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--card-border);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 1.1rem 0 .55rem;
+    color: var(--accent2);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.05rem;
+    margin-bottom: .75rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  }
+  .day-head {
+    display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap;
+    margin-bottom: .35rem;
+  }
+  .day-num {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: .85rem;
+    letter-spacing: .04em;
+  }
+  .day-title { font-weight: 700; font-size: 1.05rem; margin: 0; }
+  .muted { color: var(--muted); }
+  .small { font-size: .88rem; }
+  ul.clean { margin: .4rem 0 0; padding-left: 1.15rem; }
+  ul.clean li { margin: .25rem 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin: .4rem 0 .5rem; }
+  .tag {
+    font-size: .72rem; font-weight: 650;
+    background: var(--chip); color: var(--snow);
+    padding: .18rem .45rem; border-radius: 6px;
+  }
+  .tag.warn { background: rgba(232,184,109,.18); color: var(--warn); }
+  .tag.good { background: rgba(107,207,142,.15); color: var(--good); }
+  .tag.bad { background: rgba(224,122,122,.15); color: var(--bad); }
+  .tips li { margin-bottom: .45rem; }
+  footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    color: var(--muted);
+    font-size: .8rem;
+  }
+  .callout {
+    border-left: 3px solid var(--warn);
+    background: rgba(232,184,109,.08);
+    padding: .7rem .9rem;
+    border-radius: 0 10px 10px 0;
+    font-size: .9rem;
+    margin: .75rem 0;
+  }
+  .callout.bad { border-left-color: var(--bad); background: rgba(224,122,122,.08); }
+  .callout.good { border-left-color: var(--good); background: rgba(107,207,142,.08); }
+  .checklist { list-style: none; margin: .35rem 0 0; padding: 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: .65rem;
+    margin: 0; padding: .65rem 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist input[type="checkbox"] {
+    margin-top: .2rem; width: 1.1rem; height: 1.1rem; flex-shrink: 0;
+    accent-color: var(--good);
+  }
+  .checklist label { flex: 1; cursor: pointer; line-height: 1.45; }
+  .checklist label .when {
+    display: block; font-size: .78rem; color: var(--muted); margin-top: .2rem;
+  }
+  .checklist li.done label { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .checklist li.done label .when { text-decoration: none; color: var(--muted); opacity: .85; }
+  .check-meta { font-size: .82rem; color: var(--muted); margin: 0 0 .5rem; }
+  .check-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+  .check-actions button {
+    font: inherit; font-size: .82rem; font-weight: 650;
+    padding: .35rem .7rem; border-radius: 8px; cursor: pointer;
+    border: 1px solid var(--card-border); background: var(--bg2); color: var(--snow);
+  }
+  .check-actions button:hover { border-color: var(--accent); }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+  .opt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .65rem;
+    margin: .55rem 0;
+  }
+  @media (min-width: 560px) {
+    .opt-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    .opt-grid.two { grid-template-columns: 1fr 1fr; }
+  }
+  .opt {
+    background: var(--bg2);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: .75rem .8rem;
+  }
+  .opt h4 { margin: 0 0 .35rem; font-size: .95rem; color: var(--accent2); }
+  .opt p { margin: 0; font-size: .84rem; color: var(--muted); }
+  .strike { text-decoration: line-through; opacity: .65; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">家庭行程簡報 · DRAFT · 基地已鎖</div>
+  <h1>北海道家庭行程 · トマム＋旭川</h1>
+  <p class="sub">2026年12月20–26日 · <strong>1 大 + 2 小</strong>（約 4 歲、6 歲）飛 HKG ↔ CTS。<strong>跳過札幌・小樽</strong>；全程<strong>不租車</strong>（巴士／鐵路／的士）。Billy（爸爸）滑雪結束後另行會合 —— 酒店<strong>未訂</strong>，本頁作推薦草稿。</p>
+  <div class="meta">
+    <span class="chip">12/20–26 · 6 晚</span>
+    <span class="chip">1大2小 · HKG↔CTS</span>
+    <span class="chip">HX690／HX691 · 打算訂／未付款</span>
+    <span class="chip">Economy N · A321</span>
+    <span class="chip">トマム 3N + 旭川 OMO7 3N</span>
+    <span class="chip">不租車 · 公共交通</span>
+    <span class="chip">跳過札幌・小樽</span>
+    <span class="chip">Billy 會合 · 開放</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#overview">總覽</a>
+  <a href="#flights">航班</a>
+  <a href="#days">行程草稿</a>
+  <a href="#transport">交通</a>
+  <a href="#stay">住宿選項</a>
+  <a href="#food">食（小朋友）</a>
+  <a href="#checklist">訂位清單</a>
+  <a href="#tips">實用</a>
+  <a href="#sources">來源</a>
+</nav>
+
+<section id="overview">
+  <h2>總覽</h2>
+  <div class="card">
+    <p style="margin-top:0"><strong>重點：</strong>家庭（媽媽 + 兩小孩）由香港直飛<strong>新千歲（CTS）</strong>，基地只得<strong>星野リゾート トマム</strong>＋<strong>旭川 OMO7</strong>。輕鬆冬日、不趕場、日照短；室內＋短戶外為主。</p>
+    <ul class="clean small">
+      <li><strong>日曆：</strong>日 12/20 出發 → 六 12/26 回港＝<strong>6 晚</strong>（トマム 3N：20–22；OMO7 旭川 3N：23–25）。</li>
+      <li><strong>誰飛：</strong>家庭 1大2小 HKG↔CTS（<strong>工作計劃：HX690／HX691 · 打算訂／未付款</strong>）。Billy 另途：滑雪 12/18 完（現有 <strong>HX611 NRT→HKG</strong>），再飛東京→CTS 會合；回程或改票／另買 CTS→HKG —— <strong>未鎖</strong>。</li>
+      <li><strong>基地（已鎖）：</strong>トマム → 旭川。2026-09-28 鎖定<strong>跳過札幌・小樽・二世古・UPOPOY</strong>。</li>
+      <li><strong>交通（已鎖）：</strong>不租車 —— 星野接駁、Powder Belt Liner、大雪號（Taisetsu Liner）、JR／的士。</li>
+      <li><strong>節奏：</strong>每天最多 <strong>1 個亮點</strong>；有長途／城際移動＝當日最多一個目的地（通常只轉酒店）；<strong>先寄行李再玩</strong>；預留午睡／酒店放空。</li>
+    </ul>
+    <div class="callout good">
+      <strong>已鎖（2026-09-28）：</strong>港航工作航班 <strong>HX690／HX691</strong>（時刻當計劃用）、トマム＋旭川基地、不租車、跳過札幌／小樽。仍<strong>未訂／未付款</strong>：機票、酒店、接駁巴士座位。頁面標記「草稿」＝酒店與活動非正式預訂。
+    </div>
+    <div class="callout">
+      <strong>親子冬日原則：</strong>保暖＞景點數量；室內備案（Mina-Mina、酒店遊樂）；溫泉／公共風呂確認<strong>兒童入浴規則</strong>；雪地短玩、手套／靴備兩套。
+    </div>
+    <div class="callout good" id="pacing">
+      <strong>節奏原則（Billy）：</strong>
+      <ul class="clean small" style="margin-bottom:0">
+        <li>唔好把日子塞太滿——每天 <strong>1 個亮點封頂</strong>。</li>
+        <li>有<strong>長途／城際移動</strong>＝當日<strong>最多一個目的地</strong>（通常只係酒店轉場）。</li>
+        <li><strong>先寄行李再玩</strong>——動物園、馬洛斯、度假村活動一律 check-in／寄行李後先做。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>基地（已鎖 · 推薦形狀）</h3>
+  <div class="opt-grid two">
+    <div class="opt">
+      <h4>トマム · 3 晚（12/20–22）</h4>
+      <p>星野度假村：Mina-Mina、雪橇／Ski Debut Park（約 4 歲+）、Ice Village（約 12/20 開至翌年 3 月）。12/20 移動日：CTS→shuttle→<strong>先 check-in／寄行李</strong>；傍晚若有力先 Mina-Mina（同度假村內）。兩全日雪日（21–22）皆<strong>只在トマム</strong>，再轉旭川。</p>
+    </div>
+    <div class="opt">
+      <h4>旭川 OMO7 · 3 晚（12/23–25）</h4>
+      <p>城市基地；12/23 <strong>只搬酒店</strong>（Powder Belt／同等 → OMO7 先寄存行李；<strong>唔同日去動物園</strong>）。12/24 只去旭山動物園；12/25 馬洛斯<strong>或</strong>全日休息執裝（二選一，累就休息）。12/26 大雪號 ~08:56 OMO7→CTS，對齊 HX691 15:20。</p>
+    </div>
+  </div>
+  <div class="callout bad" style="margin-top:.55rem">
+    <strong>已跳過：</strong><span class="strike">札幌市中心</span> · <span class="strike">小樽運河</span> · <span class="strike">二世古／Kiroro</span> · <span class="strike">UPOPOY</span> —— 唔再列入行程。
+  </div>
+</section>
+
+<section id="flights">
+  <h2>航班</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">家庭 · HKG ↔ CTS（打算訂／未付款）</h3>
+    <div class="tags">
+      <span class="tag warn">打算訂／未付款</span>
+      <span class="tag good">工作計劃 · HX690／HX691</span>
+      <span class="tag">Economy N · A321-200</span>
+      <span class="tag">1大2小</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>狀態：</strong><strong>打算訂／未付款</strong>——Billy 已分享班次作工作計劃；時刻當鎖定用，正式付款前再確認庫存與票價。本頁<strong>不杜撰</strong>此 N 艙 1大2小合計價。</li>
+      <li><strong>去程 · HX690</strong>：<strong>日 12/20</strong> · HKG T2 <strong>08:30</strong> → CTS <strong>14:20</strong> · Economy N · A321-200 · 約 4h50 · 輕食／refreshments · <strong>1A+2C</strong>。</li>
+      <li><strong>回程 · HX691</strong>：<strong>六 12/26</strong> · CTS <strong>15:20</strong> → HKG T1 <strong>20:40</strong> · Economy N · A321-200 · 約 6h20 · refreshments。</li>
+      <li><strong>落地後：</strong>CTS 14:20 → <strong>當日</strong>トマム（星野機場 shuttle——核對 14:20 後末班；趕唔切則 JR＋shuttle／的士），<strong>唔經札幌</strong>。<strong>先 check-in／寄行李</strong>；抵達日唔排重戶外，最多同度假村內輕活動。</li>
+      <li><strong>回程日：</strong>CTS 15:20 起飛夠裕——推薦大雪號 <strong>~08:56 OMO7 → ~11:35 CTS</strong>（約 3.5h 緩衝值機／安檢／國際線）；清晨 ~06:56 班可選但小朋友唔使咁早起。天氣取消巴士先考慮近 CTS 過夜（見 Day 26）。</li>
+    </ul>
+    <div class="callout" style="margin-bottom:0">
+      <strong>待辦：</strong>正式訂／付款 <strong>HX690／HX691</strong>（1A+2C · Economy N；確認兒童價、行李、座位）。之後再訂トマム＋OMO7 住宿與接駁。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Billy · 會合與回程（開放）</h3>
+    <div class="tags">
+      <span class="tag warn">與滑雪行程銜接</span>
+      <span class="tag">訂單 NE2608312240145458</span>
+      <span class="tag">MR CHEUNG CHIHEI</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>現況：</strong>滑雪回程 <strong>HX611</strong> 五 12/18 NRT→HKG 已訂（見東京滑雪簡報）。之後再飛<strong>東京→CTS</strong>與家人會合（<strong>偏好飛機，多於鐵路</strong>）。</li>
+      <li><strong>開放項 A：</strong>改期／取消 HX611，改為滑雪後直飛或經東京轉 CTS，再與家庭同機 CTS→HKG —— 視<strong>改期費</strong>。</li>
+      <li><strong>開放項 B：</strong>保留 HX611 回港，另買東京→CTS，最後另買／改<strong>CTS→HKG</strong> 與家庭同日（12/26）或略早／略晚。</li>
+      <li><strong>時序粗估：</strong>滑雪五 12/18 完 → 六–日 12/19–20 前後到北海道會合（實際視航班庫存）。家庭 12/20 抵 トマム；Billy 可同日稍晚或翌日於トマム／旭川會合。</li>
+    </ul>
+    <div class="callout bad" style="margin-bottom:0">
+      <strong>非鎖定：</strong>勿假設 Billy 已有 CTS 機票。訂單 <span class="mono">NE2608312240145458</span> 僅對應現有滑雪 HX604／HX611；家庭票與 Billy 會合票皆待另訂。
+    </div>
+  </div>
+</section>
+
+<section id="days">
+  <h2>逐日行程草稿 <span class="tag warn" style="vertical-align:middle;font-weight:700">DRAFT · 酒店未訂</span></h2>
+  <p class="muted small" style="margin-top:-.35rem">按已鎖推薦「トマム 3N + 旭川 OMO7 3N」撰寫；節奏：長途移動日最多一個目的地、先寄行李再玩、每天 1 個亮點封頂。活動與接駁仍需預約。跳過札幌／小樽。</p>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">日 12月20日</span><h3 class="day-title" style="margin:0">移動日 · トマム安頓（先寄行李）</h3></div>
+    <div class="tags"><span class="tag">住トマム</span><span class="tag warn">住宿未訂</span><span class="tag">HX690 · CTS 14:20</span><span class="tag good">移動＝最多一目的地</span></div>
+    <ul class="clean small">
+      <li>家庭：<strong>HX690</strong> HKG T2 08:30 → <strong>CTS 14:20</strong>（打算訂／未付款）→ 星野機場 <strong>shuttle</strong> → トマム。</li>
+      <li>交通：優先 <strong>星野リゾート機場 shuttle</strong>（<strong>必須預約</strong>）——核對 <strong>14:20 落地後末班</strong>；若時間緊，改 <strong>JR＋車站 shuttle</strong> 或的士。唔經札幌。</li>
+      <li><strong>先 check-in／寄行李</strong>，再決定有冇力出去玩。</li>
+      <li>晚上若有力：<strong>Mina-Mina</strong>（同度假村內，唔算第二景點）。抵達日<strong>不排重戶外</strong>／遠程。</li>
+      <li>Billy 視東京→CTS 班次，或當日稍晚／翌日會合。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">一 12月21日</span><h3 class="day-title" style="margin:0">只トマム · 雪橇／Ski Debut</h3></div>
+    <div class="tags"><span class="tag">住トマム</span><span class="tag good">1 亮點 · 度假村內</span></div>
+    <ul class="clean small">
+      <li><strong>只在トマム</strong>——今日亮點：雪橇公園／<strong>Ski Debut Park</strong>（約 4 歲+）。</li>
+      <li>行李已在酒店；唔加城際移動。預留午睡／室內放空。</li>
+      <li>Mina-Mina／Ice Village 留畀 12/22（或體力許可時短補，仍唔要堆第二「遠行」）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">二 12月22日</span><h3 class="day-title" style="margin:0">只トマム · Mina-Mina／Ice Village／玩雪</h3></div>
+    <div class="tags"><span class="tag">住トマム</span><span class="tag good">1 亮點 · 度假村內</span></div>
+    <ul class="clean small">
+      <li><strong>只在トマム</strong>——今日亮點：Mina-Mina／<strong>Ice Village</strong>（2026–27 季約 <strong>12/20 2026 – 3/10 2027</strong>）／剩餘玩雪。</li>
+      <li>全部度假村內；唔趕轉場。預留午睡。</li>
+      <li>提早休息——翌日只搬去旭川（長途移動日）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">三 12月23日</span><h3 class="day-title" style="margin:0">只搬去旭川 · OMO7 先寄行李</h3></div>
+    <div class="tags"><span class="tag">轉住 OMO7 旭川</span><span class="tag warn">接駁需預約</span><span class="tag bad">同日唔去動物園</span></div>
+    <ul class="clean small">
+      <li><strong>長途移動日＝當日最多一個目的地</strong>：トマム → <strong>OMO7 旭川</strong>（酒店轉場）。</li>
+      <li>交通：<strong>Powder Belt Liner</strong>（或同等）——請搭往<strong>旭川／OMO7</strong> 嘅落車點；<strong>唔好帶齊行李喺動物園落車</strong>。</li>
+      <li>抵達後<strong>先 check-in／寄行李</strong>。軟傍晚：只在酒店休息／輕活動。</li>
+      <li><strong>同一日唔去旭山動物園</strong>——動物園改 12/24（行李留喺酒店）。</li>
+      <li>Powder Belt 參考：約 08:10 Tomamu Tower 開；成人約 ¥6,000／兒童約 ¥5,000；<strong>提早預約</strong>（9 日未訂或停班）。實際落車站以旭川市區／OMO7 為準，出發前再核。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">四 12月24日</span><h3 class="day-title" style="margin:0">只去一個景點 · 旭山動物園</h3></div>
+    <div class="tags"><span class="tag">住 OMO7</span><span class="tag good">1 亮點</span><span class="tag">行李留酒店</span></div>
+    <ul class="clean small">
+      <li><strong>只去旭山動物園</strong>（今日唯一景點）。行李<strong>留喺 OMO7</strong>。</li>
+      <li>交通：如有 <strong>OMO7 冬季 shuttle</strong> 往動物園，先預約再出發；否則巴士／的士。</li>
+      <li>企鵝散步如有舉行（中旬 12 月–中旬 3 月典型約 <strong>11:00／14:30</strong>）、北極熊／海豹。小朋友<strong>約 3–4 小時封頂</strong>，唔好全日曬冷。</li>
+      <li>聖誕夜：餐廳可能較滿；家庭餐廳或酒店餐較穩。<strong>不安排札幌／小樽</strong>（已鎖跳過）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">五 12月25日</span><h3 class="day-title" style="margin:0">二選一 · 馬洛斯 或 全日休息執裝</h3></div>
+    <div class="tags"><span class="tag">住 OMO7</span><span class="tag warn">二選一</span><span class="tag good">累就休息（預設傾向）</span></div>
+    <ul class="clean small">
+      <li><strong>只去一個景點：馬洛斯（Malus／Santa Present Park）</strong>——用 OMO7 冬季 shuttle（如有，先預約）；行李留酒店。</li>
+      <li><strong>或者</strong>全日酒店輕鬆／執裝——<strong>唔加第二景點</strong>。</li>
+      <li><strong>建議：</strong>小朋友仲有力先去馬洛斯；否則預設休息，為 12/26 大雪號留體力。累就休息。</li>
+      <li>早啲收工——翌日推薦 ~08:56 大雪號（唔使黎明起）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="day-head"><span class="day-num">六 12月26日</span><h3 class="day-title" style="margin:0">只去機場 · 大雪號 → CTS → HX691</h3></div>
+    <div class="tags"><span class="tag good">CTS 15:20 夠裕</span><span class="tag">推薦 ~08:56 巴士</span><span class="tag">移動＝只機場</span></div>
+    <ul class="clean small">
+      <li><strong>只去機場</strong>——唔加景點。回程：<strong>HX691</strong> CTS <strong>15:20</strong> → HKG T1 20:40（打算訂／未付款 · Economy N）。</li>
+      <li><strong>Taisetsu Liner（大雪號）</strong>：OMO7 <strong>六条九丁目</strong>站 → CTS。推薦 <strong>~08:56 OMO7 → ~11:35 CTS</strong>（約 3.5h 緩衝）；清晨 ~06:56 可選但非必要。出發前核 <strong>2026 冬令表</strong>並訂位。</li>
+      <li><strong>唔使</strong>特意前晚住近 CTS——除非巴士因天氣取消／大延誤。</li>
+      <li>Billy 是否同機見航班開放項。</li>
+    </ul>
+    <div class="callout" style="margin-bottom:0">
+      <strong>Flag：</strong>出發前再確認 2026 冬令大雪號時刻表，並<strong>預約座位</strong>對齊 HX691 15:20。
+    </div>
+  </div>
+</section>
+
+<section id="transport">
+  <h2>交通筆記</h2>
+  <div class="card">
+    <div class="tags">
+      <span class="tag good">已鎖 · 不租車</span>
+      <span class="tag">巴士／鐵路／的士</span>
+    </div>
+    <ul class="clean small">
+      <li><strong>原則：</strong>全程<strong>不駕駛</strong>——公共交通、巴士、JR、的士 only。</li>
+      <li><strong>CTS → トマム：</strong>星野リゾート<strong>機場／車站 shuttle</strong>（需預約；行李多時最穩）。亦可 JR 至トマム站再接駁（視班次）。</li>
+      <li><strong>Powder Belt Liner（或同等）：</strong><strong>12/23</strong> トマム → <strong>旭川／OMO7</strong>（移動日只轉酒店）。落車揀旭川市區／OMO7；<strong>唔好帶行李喺動物園落</strong>。成人約 ¥6,000／兒童約 ¥5,000；<strong>提早訂</strong>——9 日未訂或停班。</li>
+      <li><strong>Taisetsu Liner（大雪號）：</strong>旭川 ↔ CTS；停 <strong>OMO7 六条九丁目</strong>。回程 12/26 對齊 <strong>HX691 15:20</strong>——推薦 ~08:56→~11:35 CTS（約 3.5h 緩衝）；訂位；出發前核 2026 冬令表。</li>
+      <li><strong>OMO7 冬季 shuttle：</strong>12/24 往<strong>旭山動物園</strong>；12/25 往 Malus／Santa Present Park（若選去）——如有免費班次請向酒店預約。行李留酒店。</li>
+      <li><strong>JR Pass：</strong>本行程短途點對點通常不划算；用單程票或 IC（Kitaca／Suica 等）。</li>
+      <li><strong>日照：</strong>12 月北海道日落約 16:00 前後 —— 戶外安排在午前至早午後。</li>
+    </ul>
+    <div class="callout good" style="margin-bottom:0">
+      <strong>預約優先序：</strong>HX690／HX691 付款 → トマム＋OMO7 住宿 → 星野 shuttle（CTS 14:20 後）→ Powder Belt／同等（12/23 → 旭川／OMO7，唔落動物園）→ 大雪號（對齊 15:20）→ OMO7 shuttle（12/24 動物園；12/25 馬洛斯如去）。
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <h2>住宿選項（草稿 · 未訂）</h2>
+  <p class="muted small" style="margin-top:-.35rem">基地已鎖；以下為推薦 lodging，<strong>不是已訂酒店</strong>。訂前確認家庭房／兒童政策。</p>
+  <div class="card">
+    <h3 style="margin-top:0">推薦組合（6 晚 · 已鎖形狀 · 未訂）</h3>
+    <ul class="clean small">
+      <li><strong>トマム 3 晚（12/20–22）：</strong>星野リゾート トマム（Tower／其他館）——親子設施齊；確認兒童入住與餐。<strong>未訂</strong>。</li>
+      <li><strong>OMO7 旭川 3 晚（12/23–25）：</strong>城市酒店；12/23 先入住寄行李（同日唔去動物園）；方便大雪號站點、動物園／Malus shuttle。<strong>未訂</strong>。</li>
+    </ul>
+    <div class="callout bad">
+      <strong>唔訂：</strong><span class="strike">札幌站／大通酒店</span> · <span class="strike">小樽運河區</span> · <span class="strike">二世古／Kiroro</span> —— 已鎖跳過。
+    </div>
+    <div class="callout" style="margin-bottom:0">
+      <strong>提醒：</strong>12/26 無酒店。HX691 15:20 配合 ~08:56 大雪號通常夠裕——<strong>唔使</strong>特意近 CTS 過夜；天氣取消巴士先考慮的士／應急住宿。
+    </div>
+  </div>
+</section>
+
+<section id="food">
+  <h2>食 · 兒童友善提示</h2>
+  <div class="card">
+    <ul class="clean tips">
+      <li><strong>穩妥選擇：</strong>迴轉壽司、家庭餐廳（サイゼリヤ／ガスト等）、吉野家／松屋、麥當勞；湯咖哩／拉麵選不太辣、可分食。</li>
+      <li><strong>トマム：</strong>多以度假村內餐廳為主——留意兒童餐、用餐時段；可帶零食／杯麵後備。</li>
+      <li><strong>旭川：</strong>拉麵／成吉思汗（燒肉）可分食試；牛奶甜品／霜淇淋（室內店）。</li>
+      <li><strong>手信零食：</strong>Royce、白い恋人、カルビー土豆相關 —— 機場／站內可補買（唔使專程去札幌）。</li>
+      <li><strong>過敏／口味：</strong>出發前列中英日簡單過敏卡；便利店御飯糰／杯麵作後備。</li>
+      <li><strong>聖誕／週末：</strong>熱門店可能排隊；幼兒優先快食或酒店餐。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <h2>訂位／預訂清單</h2>
+  <p class="check-meta">勾選會存在本機瀏覽器（同一裝置重開仍在）。狀態只作提醒，唔等於已付款成功。localStorage key：<span class="mono">hokkaido-family-dec2026-checklist-v4</span>（v3→v4：節奏原則——先寄行李；12/23 只轉場唔去動物園；動物園 12/24；馬洛斯或休息 12/25）</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">已完成／已鎖</h3>
+    <ul class="checklist" id="check-done">
+      <li data-id="dates-picked">
+        <input type="checkbox" id="c-dates-picked" checked disabled>
+        <label for="c-dates-picked"><strong>目標日期已選</strong>：12/20 出 · 12/26 回（家庭）
+          <span class="when">日曆方向已定；機票酒店仍未訂</span>
+        </label>
+      </li>
+      <li data-id="bases-locked">
+        <input type="checkbox" id="c-bases-locked" checked disabled>
+        <label for="c-bases-locked"><strong>基地已鎖</strong>：トマム 3N + 旭川 OMO7 3N；跳過札幌・小樽；不租車
+          <span class="when">鎖定於 2026-09-28</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">要訂／要確認</h3>
+    <ul class="checklist" id="check-todo">
+      <li data-id="family-flight">
+        <input type="checkbox" id="c-family-flight">
+        <label for="c-family-flight"><strong>訂／付款 HX690／HX691</strong>（1A+2C · Economy N · 12/20 出 · 12/26 回）
+          <span class="when">打算訂／未付款 · 工作計劃時刻已鎖 · 唔杜撰 N 艙合計價 · 確認兒童價／行李／座位</span>
+        </label>
+      </li>
+      <li data-id="hotel-tomamu">
+        <input type="checkbox" id="c-hotel-tomamu">
+        <label for="c-hotel-tomamu"><strong>トマム住宿 3 晚</strong>（12/20–22）
+          <span class="when">未訂 · 草稿推薦星野トマム；確認兒童政策</span>
+        </label>
+      </li>
+      <li data-id="hotel-omo7">
+        <input type="checkbox" id="c-hotel-omo7">
+        <label for="c-hotel-omo7"><strong>OMO7 旭川 3 晚</strong>（12/23–25）
+          <span class="when">未訂 · 方便大雪號六条九丁目站</span>
+        </label>
+      </li>
+      <li data-id="skip-sapporo-hotels">
+        <input type="checkbox" id="c-skip-sapporo-hotels">
+        <label for="c-skip-sapporo-hotels"><strong>確認唔訂札幌／小樽酒店</strong>
+          <span class="when">已鎖跳過 · 勾選＝知悉、唔再搜札幌 lodging</span>
+        </label>
+      </li>
+      <li data-id="shuttle-tomamu">
+        <input type="checkbox" id="c-shuttle-tomamu">
+        <label for="c-shuttle-tomamu"><strong>星野トマム機場／車站 shuttle</strong>（CTS↔トマム）
+          <span class="when">需預約 · 12/20 CTS 14:20 後 · 核對末班；趕唔切則 JR＋shuttle／的士</span>
+        </label>
+      </li>
+      <li data-id="powder-belt">
+        <input type="checkbox" id="c-powder-belt">
+        <label for="c-powder-belt"><strong>Powder Belt Liner（或同等）</strong> トマム → 旭川／OMO7（12/23 · 只轉場）
+          <span class="when">落車揀旭川／OMO7 · 唔帶行李喺動物園落 · 成人約 ¥6,000／兒童約 ¥5,000 · 提早訂</span>
+        </label>
+      </li>
+      <li data-id="dec23-no-zoo">
+        <input type="checkbox" id="c-dec23-no-zoo">
+        <label for="c-dec23-no-zoo"><strong>12/23：確認同日唔去動物園</strong> · 先 OMO7 check-in／寄行李
+          <span class="when">移動日只轉酒店 · 軟傍晚酒店 only</span>
+        </label>
+      </li>
+      <li data-id="luggage-first">
+        <input type="checkbox" id="c-luggage-first">
+        <label for="c-luggage-first"><strong>節奏：先寄行李再玩</strong>（動物園／馬洛斯／度假村活動）
+          <span class="when">Billy 原則 · 每天 1 亮點封頂 · 長途移動＝最多一目的地</span>
+        </label>
+      </li>
+      <li data-id="zoo-dec24">
+        <input type="checkbox" id="c-zoo-dec24">
+        <label for="c-zoo-dec24"><strong>旭山動物園排 12/24</strong>（OMO7 shuttle 如有；行李留酒店；3–4h 封頂）
+          <span class="when">企鵝散步場次出發前再核 · 唔塞第二景點</span>
+        </label>
+      </li>
+      <li data-id="malus-or-rest">
+        <input type="checkbox" id="c-malus-or-rest">
+        <label for="c-malus-or-rest"><strong>12/25 二選一：馬洛斯 或 全日休息執裝</strong>
+          <span class="when">有力先去 Malus（OMO7 shuttle）；累就休息（預設傾向）· 唔加第二景點</span>
+        </label>
+      </li>
+      <li data-id="taisetsu-liner">
+        <input type="checkbox" id="c-taisetsu-liner">
+        <label for="c-taisetsu-liner"><strong>大雪號 Taisetsu Liner</strong>（OMO7→CTS 12/26；對齊 HX691 15:20）
+          <span class="when">推薦 ~08:56→~11:35 CTS（約 3.5h 緩衝）· 訂位 · 出發前核 2026 冬令表</span>
+        </label>
+      </li>
+      <li data-id="omo7-shuttles">
+        <input type="checkbox" id="c-omo7-shuttles">
+        <label for="c-omo7-shuttles"><strong>OMO7 冬季 shuttle</strong>（12/24 動物園；12/25 馬洛斯如去）
+          <span class="when">向酒店預約 · 免費班次視季節 · 行李留酒店</span>
+        </label>
+      </li>
+      <li data-id="dec26-timing">
+        <input type="checkbox" id="c-dec26-timing">
+        <label for="c-dec26-timing"><strong>12/26：大雪號對齊 HX691 15:20</strong>
+          <span class="when">推薦 ~08:56 班 · 確認 2026 冬令表並訂位 · 天氣取消先考慮近 CTS</span>
+        </label>
+      </li>
+      <li data-id="billy-to-cts">
+        <input type="checkbox" id="c-billy-to-cts">
+        <label for="c-billy-to-cts"><strong>Billy：滑雪後東京→CTS</strong>（12/18 之後）
+          <span class="when">未訂 · 偏好飛機 · 與家人會合時序待排</span>
+        </label>
+      </li>
+      <li data-id="billy-hx611">
+        <input type="checkbox" id="c-billy-hx611">
+        <label for="c-billy-hx611"><strong>Billy：決定改 HX611 vs 另買 CTS→HKG</strong>
+          <span class="when">待處理 · 訂單 NE2608312240145458 · 視改期費 · MR CHEUNG CHIHEI</span>
+        </label>
+      </li>
+      <li data-id="docs-kids">
+        <input type="checkbox" id="c-docs-kids">
+        <label for="c-docs-kids"><strong>兒童證件／簽證／JR·IC</strong>
+          <span class="when">占位 · 護照有效期、日本簽證（如需）、交通 IC 卡</span>
+        </label>
+      </li>
+      <li data-id="winter-gear">
+        <input type="checkbox" id="c-winter-gear">
+        <label for="c-winter-gear"><strong>冬衣／雪靴（小朋友）</strong>
+          <span class="when">占位 · 手套兩套、防水靴、暖包；可香港或當地租買</span>
+        </label>
+      </li>
+    </ul>
+    <div class="check-actions">
+      <button type="button" id="check-reset">清除本機勾選</button>
+    </div>
+  </div>
+  <div class="callout" style="margin-bottom:0">
+    <strong>優先次序建議：</strong>正式訂／付款 <strong>HX690／HX691</strong>（1A+2C）→ トマム 3N + OMO7 3N → 星野 shuttle（14:20 後末班）→ Powder Belt／同等（12/23 → 旭川／OMO7）→ 大雪號（對齊 15:20 · 推薦 ~08:56）→ OMO7 shuttle（動物園 24／馬洛斯 25）→ Billy 會合／HX611 → 證件與冬裝。
+  </div>
+</section>
+
+<section id="tips">
+  <h2>實用提示</h2>
+  <div class="card">
+    <ul class="clean tips">
+      <li><strong>天氣：</strong>12 月トマム／旭川多雪、體感濕冷；層層穿＋防水外層。室內外溫差大，預備換衫。</li>
+      <li><strong>健康：</strong>乾燥——潤膚／鼻噴；幼兒勿長時間戶外迎風。</li>
+      <li><strong>推車：</strong>雪地推車困難，背帶更實際；巴士／接駁有行李位時優先。</li>
+      <li><strong>現金／支付：</strong>度假村與旭川市區多 IC／信用卡；小店或需現金。</li>
+      <li><strong>緊急：</strong>記酒店地址日文、急救／警察；旅遊保險含醫療運送。</li>
+      <li><strong>與滑雪行程關係：</strong>Billy 12/14–18 志賀／東京見另一簡報；本頁只處理家庭北海道段與會合。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>來源／免責</h2>
+  <div class="card small">
+    <ul class="clean">
+      <li>日期與人數：用戶指定（2026-09-28）· 1大2小 · 12/20–26</li>
+      <li>家庭機票工作計劃（2026-09-28 Billy 分享 · <strong>打算訂／未付款</strong>）：HX690 日 12/20 HKG T2 08:30→CTS 14:20；HX691 六 12/26 CTS 15:20→HKG T1 20:40；Economy N · A321-200 · 1A+2C。不杜撰 N 艙合計價。</li>
+      <li>基地鎖定（2026-09-28）：トマム 3N + 旭川 OMO7 3N（推薦形狀已鎖）；跳過札幌・小樽・二世古・UPOPOY；不租車</li>
+      <li>節奏原則（2026-09-28 Billy）：唔塞滿；長途移動＝當日最多一目的地；先寄行李再玩；每天 1 亮點封頂。12/23 只轉 OMO7（唔去動物園）；動物園 12/24；馬洛斯或休息 12/25</li>
+      <li>Billy 滑雪航班：香港航空確認信訂單 <span class="mono">NE2608312240145458</span>（HX604／HX611；MR CHEUNG CHIHEI）——詳見 <span class="mono">/workspace/tokyo-ski-dec2026/</span></li>
+      <li>接駁參考：Powder Belt Liner、大雪號 Taisetsu Liner（OMO7 站）、星野トマム shuttle、Ice Village 開季——出發前再核 2026 冬令班次與票價</li>
+      <li>本頁<strong>無</strong>已確認「已訂」酒店；所有住宿與活動為草稿</li>
+    </ul>
+    <div class="callout bad" style="margin-top:.75rem;margin-bottom:0">
+      <strong>免責：</strong>票價、班次、營業與兒童政策隨時變更。正式出行前以航司、酒店、官方交通網站為準。本簡報不作預訂憑證。2026-09-28：家庭工作航班 HX690／HX691（打算訂／未付款）；基地鎖定トマム＋旭川；節奏原則已寫入逐日。
+    </div>
+  </div>
+</section>
+
+<footer>
+  為 Billy Cheung 家庭 2026 年 12 月北海道之旅而建 · 1大2小 · HX690／HX691 打算訂／未付款 · トマム＋旭川 · 節奏：先寄行李 · 1 亮點／日 · 跳過札幌・小樽 · zh-HK／繁體中文 · 單檔 HTML · 草稿非鎖定預訂 · 更新於 2026-09-28（HKT）· checklist key <span class="mono">hokkaido-family-dec2026-checklist-v4</span>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'hokkaido-family-dec2026-checklist-v4';
+  var root = document.getElementById('check-todo');
+  if (!root) return;
+  var boxes = root.querySelectorAll('input[type="checkbox"]');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
+  function syncLi(box) {
+    var li = box.closest('li');
+    if (li) li.classList.toggle('done', box.checked);
+  }
+  boxes.forEach(function (box) {
+    var id = box.id;
+    if (saved[id]) box.checked = true;
+    syncLi(box);
+    box.addEventListener('change', function () {
+      var state = {};
+      boxes.forEach(function (b) { state[b.id] = b.checked; });
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      syncLi(box);
+    });
+  });
+  var reset = document.getElementById('check-reset');
+  if (reset) reset.addEventListener('click', function () {
+    boxes.forEach(function (b) { b.checked = false; syncLi(b); });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
